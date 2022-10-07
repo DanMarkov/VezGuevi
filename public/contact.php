@@ -54,7 +54,7 @@ require_once "$path/private/head.php";
       <input type="email" name="email" class="box" required placeholder="enter your email">
       <input type="number" name="number" min="0" class="box" required placeholder="enter your number">
       <textarea name="msg" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
-      <input type="submit" value="send message" class="btn" name="send">
+      <span class="btn"><input type="submit" value="send message" class="submit" name="send"></span>
    </form>
 
 </section>

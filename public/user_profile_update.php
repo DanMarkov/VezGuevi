@@ -97,7 +97,7 @@ require_once "$path/private/head.php";
          </div>
       </div>
       <div class="flex-btn">
-         <input type="submit" class="btn" value="update profile" name="update_profile">
+         <span class="btn"><input type="submit" class="submit" value="update profile" name="update_profile"></span>
          <a href="home.php" class="option-btn">go back</a>
       </div>
    </form>

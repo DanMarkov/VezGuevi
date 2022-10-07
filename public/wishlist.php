@@ -93,7 +93,7 @@ require_once "$path/private/head.php";
       <input type="hidden" name="p_name" value="<?= $fetch_wishlist['name']; ?>">
       <input type="hidden" name="p_price" value="<?= $fetch_wishlist['price']; ?>">
       <input type="hidden" name="p_image" value="<?= $fetch_wishlist['image']; ?>">
-      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+      <span class="btn"><input type="submit" class="submit" value="add to cart" name="add_to_cart" ></span>
    </form>
    <?php
       $grand_total += $fetch_wishlist['price'];

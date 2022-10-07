@@ -106,28 +106,28 @@ require_once "$path/private/head.php";
          <img src="../images/jop.jpg" alt="">
          <h3>Пездо</h3>
          <p>Вид сзади</p>
-         <a href="category.php?category=fruits" class="btn">НАХЕР ЭТО?</a>
+         <a href="category?category=fruits" class="btn">НАХЕР ЭТО?</a>
       </div>
 
       <div class="box">
          <img src="../images/meat.jpg" alt="">
          <h3>мясной</h3>
          <p>Ворчит как старый пердун</p>
-         <a href="category.php?category=meat" class="btn">ХОЧУ!</a>
+         <a href="category?category=meat" class="btn">ХОЧУ!</a>
       </div>
 
       <div class="box">
          <img src="../images/Prikol.jpg" alt="">
          <h3>Перевёртыш</h3>
          <p>Тупая жужука для вытворения беспорядка, ваши соседи будут недовольны этой вещью, а вы не годай. На этикетке нарисована гадюка-это знак качества. Андрей не рекомендует. Купить 495 юаней, если вы тракторист с вас 756 юаней. Вы будете экономными. Купи сейчас и у тебя есть шанс попасть в комикс ржумена, я завидую </p>
-         <a href="category.php?category=vegitables" class="btn">УБИТЬ!</a>
+         <a href="category?category=vegitables" class="btn">УБИТЬ!</a>
       </div>
 
       <div class="box">
          <img src="../images/anomaly.jpg" alt="">
          <h3>Аномалия</h3>
          <p>Почти порвался, ЗИ успей купить тока, ок?</p>
-         <a href="category.php?category=fish" class="btn">ХОЧУ!</a>
+         <a href="category?category=fish" class="btn">ХОЧУ!</a>
       </div>
 
    </div>
@@ -156,8 +156,8 @@ require_once "$path/private/head.php";
       <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
       <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
       <input type="number" min="1" value="1" name="p_qty" class="qty">
-      <input type="submit" value="add to wishlist" class="option-btn" name="add_to_wishlist">
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+      <span class="option-btn"><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span> 
+      <span class="btn"><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>
    </form>
    <?php
       }

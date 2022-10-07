@@ -116,12 +116,6 @@ require_once "$path/private/head.php";
 
 </section>
 
-
-
-
-
-
-
 <? require_once "$path/private/footer.php"; ?>
 
 <script src="../js/script.js"></script>
