@@ -75,7 +75,7 @@ if(isset($message)){
       <input type="password" name="pass" class="box" placeholder="enter your password" required>
       <input type="password" name="cpass" class="box" placeholder="confirm your password" required>
       <input type="file" name="image" class="box" required accept="image/jpg, image/jpeg, image/png">
-      <input type="submit" value="register now" class="btn" name="submit">
+      <span class="btn"><input type="submit" value="register now" class="submit" name="submit"></span>
       <p>already have an account? <a href="login">login now</a></p>
    </form>
 

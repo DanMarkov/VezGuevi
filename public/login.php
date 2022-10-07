@@ -66,7 +66,7 @@ if(isset($message)){
       <h3>login now</h3>
       <input type="email" name="email" class="box" placeholder="enter your email" required>
       <input type="password" name="pass" class="box" placeholder="enter your password" required>
-      <input type="submit" value="login now" class="btn" name="submit">
+      <span class="btn"><input type="submit" value="login now" class="submit" name="submit"></span>
       <p>don't have an account? <a href="register">register now</a></p>
    </form>
 
