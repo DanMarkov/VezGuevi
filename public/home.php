@@ -83,13 +83,16 @@ require_once "$path/private/head.php";
 
 <div class="home-bg">
 
+   <video autoplay loop muted plays-inline class="video-bg" id="video" src="../images/video">
+      <source type="video/mp4" >
+   </video>
    <section class="home">
-
+      
       <div class="content">
-         <span>ОХРЕНЕННЫЙ</span>
+         <span>Ништяково</span>
          <h3>САМЫЕ КРУТЫЕ ТОВАРЫ!</h3>
-         <p>ВЫ ГНИДЫ? МЫ ВАС УНИЧТОЖИМ!!</p>
-         <a href="about" class="btn">чекайте!</a>
+         <p>ПРОСТО КЛАСС!</p>
+         <a href="about" class="btn">смотрите!</a>
       </div>
 
    </section>
@@ -177,6 +180,12 @@ require_once "$path/private/head.php";
 
 
 <?php require_once "$path/private/footer.php"; ?>
+<script>
+   let video = document.getElementById('video');
+   let number = Math.floor(Math.random() * 10) + 1;
+   video.src += number + '.mp4';
+
+</script>
 
 <script src="../js/script.js"></script>
 

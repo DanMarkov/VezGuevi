@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
-   --green:#f89e17;
+   --green:#f58a07;
    --orange:#12b3f3;
    --red:#e74c3c;
    --black:#333;
-   --light-color:#666;
-   --white:#fff;
+   --light-color:#4d4d4d;
+   --white:#fff; 
+   --pink: #df8888;
+   --light-green: #15ff2f;
    --light-bg:#f6f6f6;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -139,7 +141,8 @@ section{
    text-align: center;
    margin-bottom: 2rem;
    text-transform: uppercase;
-   color:var(--black);
+   color:var(--light-green);
+   background: var(--pink);
    font-size: 3.5rem;
 }
 

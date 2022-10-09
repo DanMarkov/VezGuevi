@@ -1,9 +1,32 @@
 @import url('components.css');
 
 .home-bg{
-   background: url(../images/home-bg.jpg) no-repeat;
+   /* background: url(../images/home-bg.jpg) no-repeat; */
+   /* background-size: cover;
+   background-position: center; */
+}
+
+.video-bg {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   z-index: -2;
    background-size: cover;
    background-position: center;
+}
+
+@media (min-aspect-ratio: 16/9) {
+   .video-bg {
+      width: 100%;
+      height: auto;
+   }
+}
+
+@media (max-aspect-ratio: 16/9) {
+   .video-bg {
+      width: auto;
+      height: 100%;
+   }
 }
 
 .home-bg .home{
@@ -14,10 +37,12 @@
 
 .home-bg .home .content{
    width: 50rem;
+   margin-top: 37rem;
 }
 
 .home-bg .home .content span{
-   color:var(--orange);
+   color:var(--light-green);
+   background: var(--pink);
    font-size: 2.5rem;
 }
 
@@ -28,15 +53,18 @@
    transform: translate(-50%, -50%);
    font-size: 8rem;
    text-transform: uppercase;
-   margin-top: 1.5rem;
-   color:var(--black);
+   margin-top: -14.5rem;
+   color: var(--pink);
+   background: var(--light-green);
+   text-align: center;
 }
 
 .home-bg .home .content p{
    font-size: 1.6rem;
    padding:1rem 0;
    line-height: 2;
-   color:var(--light-color);
+   color: var(--pink);
+   background: var(--light-green);
 }
 
 .home-bg .home .content a{
