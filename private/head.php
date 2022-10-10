@@ -12,4 +12,10 @@
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/style.css">
 
+   <!-- favicons! -->
+   <!-- <link rel="icon" href="../images/favicon_eye.gif" type="image/gif"> -->
+   <!-- <link rel="icon" href="../images/favicon_key.gif" type="image/gif"> -->
+   <!-- <link rel="icon" href="../images/favicon_scull.gif" type="image/gif"> -->
+   <link rel="icon" href="../images/favicon_starry.gif" type="image/gif">
+
 </head>

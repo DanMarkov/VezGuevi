@@ -92,7 +92,7 @@ require_once "$path/private/head.php";
          <span>Ништяково</span>
          <h3>САМЫЕ КРУТЫЕ ТОВАРЫ!</h3>
          <p>ПРОСТО КЛАСС!</p>
-         <a href="about" class="btn">смотрите!</a>
+         <a href="shop" class="btn">к покупкам!</a>
       </div>
 
    </section>

@@ -387,6 +387,10 @@
    resize: none;
 }
 
+.search-logo {
+   text-align: center;
+}
+
 .search-form form{
    display: flex;
    gap:1.5rem;
