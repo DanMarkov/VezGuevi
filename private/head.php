@@ -11,6 +11,7 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
 
    <!-- favicons! -->
    <!-- <link rel="icon" href="../images/favicon_eye.gif" type="image/gif"> -->

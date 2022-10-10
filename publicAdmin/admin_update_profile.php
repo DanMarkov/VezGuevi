@@ -75,7 +75,7 @@ require_once "$path/private/head.php";
    <h1 class="title">update profile</h1>
 
    <form action="" method="POST" enctype="multipart/form-data">
-      <img src="uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+      <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
       <div class="flex">
          <div class="inputBox">
             <span>username :</span>
@@ -97,7 +97,7 @@ require_once "$path/private/head.php";
          </div>
       </div>
       <div class="flex-btn">
-         <input type="submit" class="btn" value="update profile" name="update_profile">
+         <span class="btn"><input type="submit" class="submit" value="update profile" name="update_profile"></span>
          <a href="admin_page.php" class="option-btn">go back</a>
       </div>
    </form>

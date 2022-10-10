@@ -25,7 +25,7 @@ if(isset($_POST['add_product'])){
    $image = filter_var($image, FILTER_UNSAFE_RAW);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = 'uploaded_img/'.$image;
+   $image_folder = '../uploaded_img/'.$image;
 
    $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
    $select_products->execute([$name]);
@@ -98,7 +98,7 @@ require_once "$path/private/head.php";
          </div>
       </div>
       <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
-      <input type="submit" class="btn" value="add product" name="add_product">
+      <span class="btn"><input type="submit" class="submit" value="add product" name="add_product"></span>
    </form>
 
 </section>
@@ -117,7 +117,7 @@ require_once "$path/private/head.php";
    ?>
    <div class="box">
       <div class="price">$<?= $fetch_products['price']; ?>/-</div>
-      <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+      <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
       <div class="cat"><?= $fetch_products['category']; ?></div>
       <div class="details"><?= $fetch_products['details']; ?></div>

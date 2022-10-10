@@ -86,7 +86,7 @@ require_once "$path/private/head.php";
       <textarea name="details" required placeholder="enter product details" class="box" cols="30" rows="10"><?= $fetch_products['details']; ?></textarea>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
       <div class="flex-btn">
-         <input type="submit" class="btn" value="update product" name="update_product">
+         <span class="btn"><input type="submit" class="submit" value="update product" name="update_product"></span>
          <a href="admin_products.php" class="option-btn">go back</a>
       </div>
    </form>

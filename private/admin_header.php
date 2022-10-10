@@ -38,14 +38,10 @@ if(isset($message)){
             $select_profile->execute([$admin_id]);
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
-         <img src="uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+         <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
          <p><?= $fetch_profile['name']; ?></p>
          <a href="../publicAdmin/admin_update_profile.php" class="btn">update profile</a>
          <a href="../system/logout.php" class="delete-btn">logout</a>
-         <div class="flex-btn">
-            <a href="login" class="option-btn">login</a>
-            <a href="register" class="option-btn">register</a>
-         </div>
       </div>
 
    </div>

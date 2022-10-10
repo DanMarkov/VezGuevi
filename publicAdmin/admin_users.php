@@ -38,7 +38,7 @@ require_once "$path/private/head.php";
          while($fetch_users = $select_users->fetch(PDO::FETCH_ASSOC)){
       ?>
       <div class="box" style="<?php if($fetch_users['id'] == $admin_id){ echo 'display:none'; }; ?>">
-         <img src="uploaded_img/<?= $fetch_users['image']; ?>" alt="">
+         <img src="../uploaded_img/<?= $fetch_users['image']; ?>" alt="">
          <p> user id : <span><?= $fetch_users['id']; ?></span></p>
          <p> username : <span><?= $fetch_users['name']; ?></span></p>
          <p> email : <span><?= $fetch_users['email']; ?></span></p>

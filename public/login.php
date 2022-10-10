@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
       if($row['user_type'] == 'admin'){
 
          $_SESSION['admin_id'] = $row['id'];
-         header("location:admin");
+         header("location:/admin");
 
       }elseif($row['user_type'] == 'user'){
 
@@ -67,7 +67,7 @@ if(isset($message)){
       <input type="email" name="email" class="box" placeholder="enter your email" required>
       <input type="password" name="pass" class="box" placeholder="enter your password" required>
       <span class="btn"><input type="submit" value="login now" class="submit" name="submit"></span>
-      <p>don't have an account? <a href="register">register now</a></p>
+      <p>don't have an account? <a href="/register">register now</a></p>
    </form>
 
 </section>

@@ -391,6 +391,11 @@
    text-align: center;
 }
 
+.search-img {
+   width: 45rem;
+   height: 12rem;
+}
+
 .search-form form{
    display: flex;
    gap:1.5rem;
@@ -795,5 +800,7 @@
    .wishlist .box-container{
       grid-template-columns: 1fr;
    }
+
+ 
 
 }

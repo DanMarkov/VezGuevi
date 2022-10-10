@@ -84,7 +84,7 @@ require_once "$path/private/head.php";
 <section class="search-form">
 
    <div class="search-logo">
-      <img src="../images/VHSearch_logo.jpg" alt="VHSearch_logo" width="450" height="114">
+      <img src="../images/VHSearch_logo.jpg" alt="VHSearch_logo" class="search-img">
    </div>
    <form action="" method="POST">
       <input type="text" class="box" name="search_box" placeholder="search products...">

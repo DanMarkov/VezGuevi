@@ -138,7 +138,7 @@ require_once "$path/private/head.php";
          </div>
       </div>
 
-      <input type="submit" name="order" class="btn <?= ($cart_grand_total > 1)?'':'disabled'; ?>" value="place order">
+      <span class="btn"><input type="submit" name="order" class="submit" <?= ($cart_grand_total > 1)?'':'disabled'; ?>" value="place order"></span>
 
    </form>
 
