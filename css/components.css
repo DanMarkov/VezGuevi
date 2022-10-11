@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import url(https://fonts.bunny.net/css?family=aclonica:400|aldrich:400|bungee-shade:400|rubik:300,400,500,600);
 
 :root{
    --green:#f58a07;
@@ -21,7 +21,10 @@
 }
 
 *{
-   font-family: 'Space Grotesk', sans-serif;
+   /* font-family: 'Rubik', sans-serif; */
+   /* font-family: 'Aclonica', sans-serif; */
+   font-family: 'Aldrich', sans-serif;
+   /* font-family: 'Bungee Shade', display; */
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
