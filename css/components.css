@@ -12,6 +12,7 @@
    --light-bg:#f6f6f6;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --light-pink: #e47be5;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 *{
-   font-family: 'Rubik', sans-serif;
+   font-family: 'Space Grotesk', sans-serif;
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
@@ -106,6 +107,29 @@ section{
    padding:3rem 2rem;
    max-width: 1200px;
    margin:0 auto;
+}
+
+h3, .name {
+   text-transform: uppercase;
+   color:var(--black);
+   padding:1rem 0;
+   font-size: 2.5rem;
+   background: linear-gradient(-4deg, rgba(171,224,249,1) 6%, rgba(178,171,212,1) 21%, rgba(255,143,178,1) 71%, rgba(255,232,120,1));
+   background-size: 1000%;
+   font-weight: 700;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: animated_text 5s ease-in-out infinite;
+   -moz-animation: animated_text 5s ease-in-out infinite;
+   -webkit-animation: animated_text 5s ease-in-out infinite;
+}
+
+p {
+   transition: color .2s ease-in-out,opacity .2s ease-in-out;
+}
+
+p:hover {
+   color: var(--light-pink) !important;
 }
 
 .disabled{
@@ -310,7 +334,6 @@ section{
 
 .header .flex .logo{
    font-size: 2.5rem;
-   cursor: pointer;
 }
 
 .header .flex .logo img {
@@ -338,7 +361,6 @@ section{
 .header .flex .icons > *{
    font-size: 2.5rem;
    color:var(--light-color);
-   cursor: pointer;
    margin-left: 1.5rem;
 }
 
@@ -563,4 +585,10 @@ section{
       font-size: 3rem;
    }
    
+}
+
+@keyframes animated_text {
+	0% { /*! background-position: 0px 50%; */ }
+	50% { background-position: 100% 50%; }
+	100% { /*! background-position: 0px 50%; */ }
 }

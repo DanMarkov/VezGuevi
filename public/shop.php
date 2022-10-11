@@ -83,10 +83,10 @@ require_once "$path/private/head.php";
 
 <section class="p-category">
 
-   <a href="category.php?category=fruits">fruits</a>
-   <a href="category.php?category=vegitables">vegitables</a>
-   <a href="category.php?category=fish">fish</a>
-   <a href="category.php?category=meat">meat</a>
+   <a href="category?category=tops">tops</a>
+   <a href="category?category=bottoms">Bottoms</a>
+   <a href="category?category=womens">Womens</a>
+   <a href="category?category=accessories">Accessories</a>
 
 </section>
 

@@ -101,36 +101,39 @@ require_once "$path/private/head.php";
 
 <section class="home-category">
 
-   <h1 class="title">Что за дич вы хотели бы купить?</h1>
+   <h1 class="title">Категории</h1>
 
    <div class="box-container">
 
       <div class="box">
-         <img src="../images/jop.jpg" alt="">
-         <h3>Пездо</h3>
-         <p>Вид сзади</p>
-         <a href="category?category=fruits" class="btn">НАХЕР ЭТО?</a>
+         <img src="../images/shibaquest_tee_200x.png" alt="siba_quest">
+         <h3>tops</h3>
+         <p>VaporTEK Top, Graphic Tees, Long Sleeve Graphic Tees, Graphic Sweatshirts,
+            Graphic Sweatshirts, Hawaiian Shirts, All Over Print Tees, All Over Print Hoodies,
+            All Over Print Sweatshirts, All Over Print Zip Up, Tank Tops, Bomber Jackets;
+         </p>
+         <a href="category?category=tops" class="btn">Смотреть</a>
       </div>
 
       <div class="box">
-         <img src="../images/meat.jpg" alt="">
-         <h3>мясной</h3>
-         <p>Ворчит как старый пердун</p>
-         <a href="category?category=meat" class="btn">ХОЧУ!</a>
+         <img src="../images/cloakanddagger_200x.png" alt="">
+         <h3>Bottoms</h3>
+         <p>VaporTEK Shorts, Joggers, Shorts, Swim Trunks, Shoes</p>
+         <a href="category?category=bottoms" class="btn">Смотреть</a>
       </div>
 
       <div class="box">
-         <img src="../images/Prikol.jpg" alt="">
-         <h3>Перевёртыш</h3>
-         <p>Тупая жужука для вытворения беспорядка, ваши соседи будут недовольны этой вещью, а вы не годай. На этикетке нарисована гадюка-это знак качества. Андрей не рекомендует. Купить 495 юаней, если вы тракторист с вас 756 юаней. Вы будете экономными. Купи сейчас и у тебя есть шанс попасть в комикс ржумена, я завидую </p>
-         <a href="category?category=vegitables" class="btn">УБИТЬ!</a>
+         <img src="../images/Yogasetmockuptopfront_200x.png" alt="">
+         <h3>Womens</h3>
+         <p>VaporTEK Collection, Crop Tops, High Legged One Piece Swimsuits</p>
+         <a href="category?category=womens" class="btn">Смотреть</a>
       </div>
 
       <div class="box">
-         <img src="../images/anomaly.jpg" alt="">
-         <h3>Аномалия</h3>
-         <p>Почти порвался, ЗИ успей купить тока, ок?</p>
-         <a href="category?category=fish" class="btn">ХОЧУ!</a>
+         <img src="../images/facemask_samurai_new_front_200x.png" alt="">
+         <h3>Accessories</h3>
+         <p>Bucket Hats, Face Masks, Hats, Phone Cases, Pins, Beach Towels, </p>
+         <a href="category?category=accessories" class="btn">Смотреть</a>
       </div>
 
    </div>
