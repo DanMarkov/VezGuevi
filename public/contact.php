@@ -10,16 +10,22 @@ if(!isset($user_id)){
    header('location:login');
 };
 
+function clearValue($value) {
+    $value = trim($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
+
 if(isset($_POST['send'])){
 
    $name = $_POST['name'];
-   $name = filter_var($name, FILTER_UNSAFE_RAW);
+   $name = clearValue($name);
    $email = $_POST['email'];
-   $email = filter_var($email, FILTER_UNSAFE_RAW);
+   $email = clearValue($email);
    $number = $_POST['number'];
-   $number = filter_var($number, FILTER_UNSAFE_RAW);
+   $number = clearValue($number);
    $msg = $_POST['msg'];
-   $msg = filter_var($msg, FILTER_UNSAFE_RAW);
+   $msg = clearValue($msg);
 
    $select_message = $conn->prepare("SELECT * FROM `message` WHERE name = ? AND email = ? AND number = ? AND message = ?");
    $select_message->execute([$name, $email, $number, $msg]);

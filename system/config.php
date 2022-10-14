@@ -2,7 +2,7 @@
 $dbHost = "localhost";
 $dbName = "shop_db";
 $dbUsername = "root";
-$dbPassword = "root";
+$dbPassword = "";
 session_start();
 //MySQL 
 try{

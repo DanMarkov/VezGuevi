@@ -10,18 +10,24 @@ if(!isset($user_id)){
    header('location:login');
 };
 
+function clearValue($value) {
+    $value = trim($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
+
 if(isset($_POST['order'])){
 
    $name = $_POST['name'];
-   $name = filter_var($name, FILTER_UNSAFE_RAW);
+   $name = clearValue($name);
    $number = $_POST['number'];
-   $number = filter_var($number, FILTER_UNSAFE_RAW);
+   $number = clearValue($number);
    $email = $_POST['email'];
-   $email = filter_var($email, FILTER_UNSAFE_RAW);
+   $email = clearValue($email);
    $method = $_POST['method'];
-   $method = filter_var($method, FILTER_UNSAFE_RAW);
+   $method = clearValue($method);
    $address = 'flat no. '. $_POST['flat'] .' '. $_POST['street'] .' '. $_POST['city'] .' '. $_POST['state'] .' '. $_POST['country'] .' - '. $_POST['pin_code'];
-   $address = filter_var($address, FILTER_UNSAFE_RAW);
+   $address = clearValue($address);
    $placed_on = date('d-M-Y');
 
    $cart_total = 0;
@@ -106,10 +112,11 @@ require_once "$path/private/head.php";
          <div class="inputBox">
             <span>payment method :</span>
             <select name="method" class="box" required>
-               <option value="cash on delivery">cash on delivery</option>
-               <option value="credit card">credit card</option>
-               <option value="paytm">paytm</option>
-               <option value="paypal">paypal</option>
+               <option value="credit card">Credit card</option>
+               <option value="paypal">Paypal</option>
+               <option value="bitcoin">Bitcoin</option>
+               <option value="monero">Monero</option>
+               <option value="wownero">Wownero</option>
             </select>
          </div>
          <div class="inputBox">

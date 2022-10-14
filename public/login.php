@@ -1,45 +1,8 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
-require_once "$path/system/config.php";
+require_once "$path/system/sysLogin.php";
 
 session_start();
-
-if(isset($_POST['submit'])){
-
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_UNSAFE_RAW);
-   $pass = md5($_POST['pass']);
-   $pass = filter_var($pass, FILTER_UNSAFE_RAW);
-
-   $sql = "SELECT * FROM `users` WHERE email = ? AND password = ?";
-   $stmt = $conn->prepare($sql);
-   $stmt->execute([$email, $pass]);
-   $rowCount = $stmt->rowCount();  
-
-   $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-   if($rowCount > 0){
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_id'] = $row['id'];
-         header("location:/admin");
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_id'] = $row['id'];
-         header("location:/home");
-
-      }else{
-         $message[] = 'no user found!';
-      }
-
-   }else{
-      $message[] = 'incorrect email or password!';
-   }
-
-}
-
 require_once "$path/private/head.php";
 ?>
 
@@ -66,8 +29,8 @@ if(isset($message)){
       <h3>login now</h3>
       <input type="email" name="email" class="box" placeholder="enter your email" required>
       <input type="password" name="pass" class="box" placeholder="enter your password" required>
-      <span class="btn"><input type="submit" value="login now" class="submit" name="submit"></span>
-      <p>don't have an account? <a href="/register">register now</a></p>
+      <span class="btn"><input type="submit" value="Login Now" class="submit" name="submit"></span>
+      <p>don't have an account? <a href="/signup">sign up now!</a></p>
    </form>
 
 </section>

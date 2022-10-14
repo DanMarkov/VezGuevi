@@ -52,10 +52,6 @@ if(isset($message)){
          <p><?= $fetch_profile['name']; ?></p>
          <a href="update" class="btn">update profile</a>
          <a href="../system/logout.php" class="delete-btn">logout</a>
-         <!-- <div class="flex-btn">
-            <a href="login" class="option-btn">login</a>
-            <a href="register" class="option-btn">register</a>
-         </div> -->
       </div>
 
    </div>

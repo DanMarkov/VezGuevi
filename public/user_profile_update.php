@@ -10,21 +10,27 @@ if(!isset($user_id)){
    header('location:login');
 };
 
+function clearValue($value) {
+    $value = trim($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
+
 if(isset($_POST['update_profile'])){
 
    $name = $_POST['name'];
-   $name = filter_var($name, FILTER_UNSAFE_RAW);
+   $name = clearValue($name);
    $email = $_POST['email'];
-   $email = filter_var($email, FILTER_UNSAFE_RAW);
+   $email = clearValue($email);
 
    $update_profile = $conn->prepare("UPDATE `users` SET name = ?, email = ? WHERE id = ?");
    $update_profile->execute([$name, $email, $user_id]);
 
    $image = $_FILES['image']['name'];
-   $image = filter_var($image, FILTER_UNSAFE_RAW);
+   $image = clearValue($image);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = '../uploaded_img/'.$image;
+   $image_folder = "$path/uploaded_img/".$image;
    $old_image = $_POST['old_image'];
 
    if(!empty($image)){
@@ -35,7 +41,7 @@ if(isset($_POST['update_profile'])){
          $update_image->execute([$image, $user_id]);
          if($update_image){
             move_uploaded_file($image_tmp_name, $image_folder);
-            unlink('../uploaded_img/'.$old_image);
+            unlink("$path/uploaded_img/".$old_image);
             $message[] = 'image updated successfully!';
          };
       };
@@ -43,11 +49,11 @@ if(isset($_POST['update_profile'])){
 
    $old_pass = $_POST['old_pass'];
    $update_pass = md5($_POST['update_pass']);
-   $update_pass = filter_var($update_pass, FILTER_UNSAFE_RAW);
+   $update_pass = clearValue($update_pass);
    $new_pass = md5($_POST['new_pass']);
-   $new_pass = filter_var($new_pass, FILTER_UNSAFE_RAW);
+   $new_pass = clearValue($new_pass);
    $confirm_pass = md5($_POST['confirm_pass']);
-   $confirm_pass = filter_var($confirm_pass, FILTER_UNSAFE_RAW);
+   $confirm_pass = clearValue($confirm_pass);
 
    if(!empty($update_pass) AND !empty($new_pass) AND !empty($confirm_pass)){
       if($update_pass != $old_pass){

@@ -7,14 +7,20 @@ session_start();
 $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
-   header('location:../public/login.php');
+   header('location:/login');
 };
+
+function clearValue($value) {
+    $value = trim($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
 
 if(isset($_POST['update_order'])){
 
    $order_id = $_POST['order_id'];
    $update_payment = $_POST['update_payment'];
-   $update_payment = filter_var($update_payment, FILTER_UNSAFE_RAW);
+   $update_payment = clearValue($update_payment);
    $update_orders = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
    $update_orders->execute([$update_payment, $order_id]);
    $message[] = 'payment has been updated!';

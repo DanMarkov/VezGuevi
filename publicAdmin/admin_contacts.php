@@ -7,7 +7,7 @@ session_start();
 $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
-   header('location:../public/login.php');
+   header('location:/login');
 };
 
 if(isset($_GET['delete'])){

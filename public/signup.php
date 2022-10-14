@@ -1,0 +1,89 @@
+<?php
+$path = $_SERVER['DOCUMENT_ROOT'];
+require_once "$path/system/sysSignUp.php";
+require_once "$path/private/head.php";
+?>
+
+<body>
+
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+
+?>
+   
+<section class="form-container">
+
+   <form action="" enctype="multipart/form-data" id="formSignup" method="POST">
+      <h3>Sign Up Now!</h3>
+      <input type="text" name="name" class="box" id="login"  placeholder="enter your name" required>
+      <input type="email" name="email" class="box" placeholder="enter your email" required>
+      <input type="password" name="pass" class="box" id="password" placeholder="enter your password" required>
+      <input type="password" name="cpass" class="box" id="password2" placeholder="confirm your password" required>
+      <input type="file" name="image" class="box" required accept="image/jpg, image/jpeg, image/png">
+      <span class="btn"><input type="submit" value="Sign Up Now" class="submit" name="submit"></span>
+      <p>already have an account? <a href="login">login now</a></p>
+   </form>
+
+</section>
+
+<script>
+   login.oninput = ()=>{
+   if(login.value.length<3){
+        console.log("Логин должен быть от 3 символов!");
+        login.style.border = ".2rem solid red";
+     
+   }
+   else{
+       login.style.border = ".2rem solid green";
+   }
+}
+password.oninput = ()=>{
+   if(password.value.length<3){
+        console.log("Логин должен быть от 3 символов!");
+        password.style.border = ".2rem solid red";
+     
+   }
+   else{
+       password.style.border = ".2rem solid green";
+   }
+}
+password2.oninput = ()=>{
+   if(password.value!=password2.value){
+       
+        password2.style.border = ".2rem solid red";
+     
+   }
+   else{
+       password2.style.border = ".2rem solid green";
+   }
+}
+formSignup.onsubmit = ()=>{
+    if(login.value.length<3){
+        console.log("Логин должен быть от 3 символов!");
+        login.style.border = ".2rem solid red";
+        return false;
+    }
+    if(password.value.length<3){
+        console.log("Пароль должен быть от 3 символов!");
+        password.style.border = ".2rem solid red";
+        return false;
+    }
+    if(password.value != password2.value){
+       console.log("Пароли не совпадают!");
+        return false;
+
+    }
+}
+</script>
+</body>
+</html>

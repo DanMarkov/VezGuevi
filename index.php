@@ -12,8 +12,8 @@ if(@$_SERVER['REDIRECT_URL']=="" or @$_SERVER['REDIRECT_URL']=="/home"):
 elseif($_SERVER['REDIRECT_URL']=="/login"):
      require_once "$path/public/login.php";
 
-elseif($_SERVER['REDIRECT_URL']=="/register"):
-     require_once "$path/public/register.php";
+elseif($_SERVER['REDIRECT_URL']=="/signup"):
+     require_once "$path/public/signup.php";
        
 elseif($_SERVER['REDIRECT_URL']=="/about"):
      require_once "$path/public/about.php";
