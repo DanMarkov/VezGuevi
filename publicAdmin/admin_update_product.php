@@ -72,8 +72,8 @@ require_once "$path/private/head.php";
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" method="post" enctype="multipart/form-data">
-      <!-- <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
-      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>"> -->
+      <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
+      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <input type="text" name="name" placeholder="enter product name" required class="box" value="<?= $fetch_products['name']; ?>">
       <input type="number" name="price" min="0" placeholder="enter product price" required class="box" value="<?= $fetch_products['price']; ?>">

@@ -64,7 +64,7 @@ require_once "$path/private/head.php";
       <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
       <div class="name"><?= $fetch_cart['name']; ?></div>
       <div class="price">$<?= $fetch_cart['price']; ?>/-</div>
-      <!-- <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>"> -->
+      <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
       <div class="flex-btn">
          <input type="number" min="1" value="<?= $fetch_cart['quantity']; ?>" class="qty" name="p_qty">
          <span class="option-btn"><input type="submit" value="update" name="update_qty" class="submit"></span>

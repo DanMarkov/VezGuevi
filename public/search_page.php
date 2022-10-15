@@ -113,10 +113,10 @@ require_once "$path/private/head.php";
       <a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <!-- <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
       <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
-      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>"> -->
+      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
       <input type="number" min="1" value="1" name="p_qty" class="qty">
       <span class="option-btn"><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span>
       <span class="btn"><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>

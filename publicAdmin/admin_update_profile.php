@@ -87,10 +87,10 @@ require_once "$path/private/head.php";
             <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="update email" required class="box">
             <span>update pic :</span>
             <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box">
-            <!-- <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>"> -->
+            <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>">
          </div>
          <div class="inputBox">
-            <!-- <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>"> -->
+            <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>">
             <span>old password :</span>
             <input type="password" name="update_pass" placeholder="enter previous password" class="box">
             <span>new password :</span>

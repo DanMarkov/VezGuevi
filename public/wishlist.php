@@ -90,10 +90,10 @@ require_once "$path/private/head.php";
       <div class="name"><?= $fetch_wishlist['name']; ?></div>
       <div class="price">$<?= $fetch_wishlist['price']; ?>/-</div>
       <input type="number" min="1" value="1" class="qty" name="p_qty">
-      <!-- <input type="hidden" name="pid" value="<?= $fetch_wishlist['pid']; ?>">
+      <input type="hidden" name="pid" value="<?= $fetch_wishlist['pid']; ?>">
       <input type="hidden" name="p_name" value="<?= $fetch_wishlist['name']; ?>">
       <input type="hidden" name="p_price" value="<?= $fetch_wishlist['price']; ?>">
-      <input type="hidden" name="p_image" value="<?= $fetch_wishlist['image']; ?>"> -->
+      <input type="hidden" name="p_image" value="<?= $fetch_wishlist['image']; ?>">
       <span class="btn"><input type="submit" class="submit" value="add to cart" name="add_to_cart" ></span>
    </form>
    <?php

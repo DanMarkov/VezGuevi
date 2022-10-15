@@ -65,7 +65,7 @@ require_once "$path/private/head.php";
          <p> total price : <span>$<?= $fetch_orders['total_price']; ?>/-</span> </p>
          <p> payment method : <span><?= $fetch_orders['method']; ?></span> </p>
          <form action="" method="POST">
-            <!-- <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>"> -->
+            <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
             <select name="update_payment" class="drop-down">
                <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
                <option value="pending">pending</option>
