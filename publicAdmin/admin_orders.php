@@ -19,8 +19,7 @@ function clearValue($value) {
 if(isset($_POST['update_order'])){
 
    $order_id = $_POST['order_id'];
-   $update_payment = $_POST['update_payment'];
-   $update_payment = clearValue($update_payment);
+   $update_payment = clearValue($_POST['update_payment']);
    $update_orders = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
    $update_orders->execute([$update_payment, $order_id]);
    $message[] = 'payment has been updated!';
@@ -66,7 +65,7 @@ require_once "$path/private/head.php";
          <p> total price : <span>$<?= $fetch_orders['total_price']; ?>/-</span> </p>
          <p> payment method : <span><?= $fetch_orders['method']; ?></span> </p>
          <form action="" method="POST">
-            <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+            <!-- <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>"> -->
             <select name="update_payment" class="drop-down">
                <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
                <option value="pending">pending</option>

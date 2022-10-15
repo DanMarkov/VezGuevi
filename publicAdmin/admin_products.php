@@ -18,17 +18,12 @@ function clearValue($value) {
 
 if(isset($_POST['add_product'])){
 
-   $name = $_POST['name'];
-   $name = clearValue($name);
-   $price = $_POST['price'];
-   $price = clearValue($price);
-   $category = $_POST['category'];
-   $category = clearValue($category);
-   $details = $_POST['details'];
-   $details = clearValue($details);
+   $name = clearValue($_POST['name']);
+   $price = clearValue($_POST['price']);
+   $category = clearValue($_POST['category']);
+   $details = clearValue($_POST['details']);
 
-   $image = $_FILES['image']['name'];
-   $image = clearValue($image);
+   $image = clearValue($_FILES['image']['name']);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = "$path/uploaded_img/".$image;

@@ -18,16 +18,13 @@ function clearValue($value) {
 
 if(isset($_POST['update_profile'])){
 
-   $name = $_POST['name'];
-   $name = clearValue($name);
-   $email = $_POST['email'];
-   $email = clearValue($email);
+   $name = clearValue($_POST['name']);
+   $email = clearValue($_POST['email']);
 
    $update_profile = $conn->prepare("UPDATE `users` SET name = ?, email = ? WHERE id = ?");
    $update_profile->execute([$name, $email, $user_id]);
 
-   $image = $_FILES['image']['name'];
-   $image = clearValue($image);
+   $image = clearValue($_FILES['image']['name']);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = "$path/uploaded_img/".$image;
@@ -90,10 +87,10 @@ require_once "$path/private/head.php";
             <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="update email" required class="box">
             <span>update pic :</span>
             <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box">
-            <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>">
+            <!-- <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>"> -->
          </div>
          <div class="inputBox">
-            <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>">
+            <!-- <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>"> -->
             <span>old password :</span>
             <input type="password" name="update_pass" placeholder="enter previous password" class="box">
             <span>new password :</span>

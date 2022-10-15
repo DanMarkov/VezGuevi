@@ -18,16 +18,11 @@ function clearValue($value) {
 
 if(isset($_POST['add_to_cart'])){
 
-   $pid = $_POST['pid'];
-   $pid = clearValue($pid);
-   $p_name = $_POST['p_name'];
-   $p_name = clearValue($p_name);
-   $p_price = $_POST['p_price'];
-   $p_price = clearValue($p_price);
-   $p_image = $_POST['p_image'];
-   $p_image = clearValue($p_image);
-   $p_qty = $_POST['p_qty'];
-   $p_qty = clearValue($p_qty);
+   $pid = clearValue($_POST['pid']);
+   $p_name = clearValue($_POST['p_name']);
+   $p_price = clearValue($_POST['p_price']);
+   $p_image = clearValue($_POST['p_image']);
+   $p_qty = clearValue($_POST['p_qty']);
 
    $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
    $check_cart_numbers->execute([$p_name, $user_id]);
@@ -95,10 +90,10 @@ require_once "$path/private/head.php";
       <div class="name"><?= $fetch_wishlist['name']; ?></div>
       <div class="price">$<?= $fetch_wishlist['price']; ?>/-</div>
       <input type="number" min="1" value="1" class="qty" name="p_qty">
-      <input type="hidden" name="pid" value="<?= $fetch_wishlist['pid']; ?>">
+      <!-- <input type="hidden" name="pid" value="<?= $fetch_wishlist['pid']; ?>">
       <input type="hidden" name="p_name" value="<?= $fetch_wishlist['name']; ?>">
       <input type="hidden" name="p_price" value="<?= $fetch_wishlist['price']; ?>">
-      <input type="hidden" name="p_image" value="<?= $fetch_wishlist['image']; ?>">
+      <input type="hidden" name="p_image" value="<?= $fetch_wishlist['image']; ?>"> -->
       <span class="btn"><input type="submit" class="submit" value="add to cart" name="add_to_cart" ></span>
    </form>
    <?php

@@ -1,7 +1,6 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
 require_once "$path/system/config.php";
-require_once "$path/system/sysLogin.php";
 
 session_start();
 
@@ -19,14 +18,10 @@ function clearValue($value) {
 
 if(isset($_POST['add_to_wishlist'])){
 
-   $pid = $_POST['pid'];
-   $pid = clearValue($pid);
-   $p_name = $_POST['p_name'];
-   $p_name = clearValue($p_name);
-   $p_price = $_POST['p_price'];
-   $p_price = clearValue($p_price);
-   $p_image = $_POST['p_image'];
-   $p_image = clearValue($p_image);
+   $pid = clearValue($_POST['pid']);
+   $p_name = clearValue($_POST['p_name']);
+   $p_price = clearValue($_POST['p_price']);
+   $p_image = clearValue($_POST['p_image']);
 
    $check_wishlist_numbers = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND user_id = ?");
    $check_wishlist_numbers->execute([$p_name, $user_id]);
@@ -48,16 +43,11 @@ if(isset($_POST['add_to_wishlist'])){
 
 if(isset($_POST['add_to_cart'])){
 
-   $pid = $_POST['pid'];
-   $pid = clearValue($pid);
-   $p_name = $_POST['p_name'];
-   $p_name = clearValue($p_name);
-   $p_price = $_POST['p_price'];
-   $p_price = clearValue($p_price);
-   $p_image = $_POST['p_image'];
-   $p_image = clearValue($p_image);
-   $p_qty = $_POST['p_qty'];
-   $p_qty = clearValue($p_qty);
+   $pid = clearValue($_POST['pid']);
+   $p_name = clearValue($_POST['p_name']);
+   $p_price = clearValue($_POST['p_price']);
+   $p_image = clearValue($_POST['p_image']);
+   $p_qty = clearValue($_POST['p_qty']);
 
    $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
    $check_cart_numbers->execute([$p_name, $user_id]);
@@ -114,10 +104,10 @@ require_once "$path/private/head.php";
       <a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+      <!-- <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
       <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
-      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>"> -->
       <input type="number" min="1" value="1" name="p_qty" class="qty">
       <span class="option-btn"><input type="submit" class="submit" value="add to wishlist"  name="add_to_wishlist"></span>
       <span class="btn"><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>

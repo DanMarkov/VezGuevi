@@ -19,17 +19,12 @@ function clearValue($value) {
 if(isset($_POST['update_product'])){
 
    $pid = $_POST['pid'];
-   $name = $_POST['name'];
-   $name = clearValue($name);
-   $price = $_POST['price'];
-   $price = clearValue($price);
-   $category = $_POST['category'];
-   $category = clearValue($category);
-   $details = $_POST['details'];
-   $details = clearValue($details);
+   $name = clearValue($_POST['name']);
+   $price = clearValue($_POST['price']);
+   $category = clearValue($_POST['category']);
+   $details = clearValue($_POST['details']);
 
-   $image = $_FILES['image']['name'];
-   $image = clearValue($image);
+   $image = clearValue($_FILES['image']['name']);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = "$path/uploaded_img/".$image;
@@ -77,8 +72,8 @@ require_once "$path/private/head.php";
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
-      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+      <!-- <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
+      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>"> -->
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <input type="text" name="name" placeholder="enter product name" required class="box" value="<?= $fetch_products['name']; ?>">
       <input type="number" name="price" min="0" placeholder="enter product price" required class="box" value="<?= $fetch_products['price']; ?>">

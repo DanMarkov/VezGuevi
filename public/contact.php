@@ -18,14 +18,10 @@ function clearValue($value) {
 
 if(isset($_POST['send'])){
 
-   $name = $_POST['name'];
-   $name = clearValue($name);
-   $email = $_POST['email'];
-   $email = clearValue($email);
-   $number = $_POST['number'];
-   $number = clearValue($number);
-   $msg = $_POST['msg'];
-   $msg = clearValue($msg);
+   $name = clearValue($_POST['name']);
+   $email = clearValue($_POST['email']);
+   $number = clearValue($_POST['number']);
+   $msg = clearValue($_POST['msg']);
 
    $select_message = $conn->prepare("SELECT * FROM `message` WHERE name = ? AND email = ? AND number = ? AND message = ?");
    $select_message->execute([$name, $email, $number, $msg]);

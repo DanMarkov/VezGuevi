@@ -39,11 +39,11 @@ if($rowCount > 0){
       header("location:/home");
 
    }else{
-      $message[] = 'no user found!';
+      $message[] = 'Пользователь не найден!';
    }
 
 }else{
-   $message[] = 'incorrect email or password!';
+   $message[] = 'Неверный логин или пароль!';
 }
 
 }

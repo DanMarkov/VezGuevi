@@ -18,14 +18,10 @@ function clearValue($value) {
 
 if(isset($_POST['order'])){
 
-   $name = $_POST['name'];
-   $name = clearValue($name);
-   $number = $_POST['number'];
-   $number = clearValue($number);
-   $email = $_POST['email'];
-   $email = clearValue($email);
-   $method = $_POST['method'];
-   $method = clearValue($method);
+   $name = clearValue($_POST['name']);
+   $number = clearValue($_POST['number']);
+   $email = clearValue($_POST['email']);
+   $method = clearValue($_POST['method']);
    $address = 'flat no. '. $_POST['flat'] .' '. $_POST['street'] .' '. $_POST['city'] .' '. $_POST['state'] .' '. $_POST['country'] .' - '. $_POST['pin_code'];
    $address = clearValue($address);
    $placed_on = date('d-M-Y');
@@ -115,6 +111,7 @@ require_once "$path/private/head.php";
                <option value="credit card">Credit card</option>
                <option value="paypal">Paypal</option>
                <option value="bitcoin">Bitcoin</option>
+               <option value="ethereum">Ethereum</option>
                <option value="monero">Monero</option>
                <option value="wownero">Wownero</option>
             </select>
