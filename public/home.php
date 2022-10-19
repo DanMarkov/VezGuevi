@@ -87,10 +87,15 @@ require_once "$path/private/head.php";
    <section class="home">
       
       <div class="content">
-         <span>Ништяково</span>
-         <h3>САМЫЕ КРУТЫЕ ТОВАРЫ!</h3>
-         <p>ПРОСТО КЛАСС!</p>
-         <a href="shop" class="btn">к покупкам!</a>
+            <span>Лиминальные пространства</span>
+            <h3>новая вапор коллекция</h3>
+            <p>фюча фанк</p>
+         <a href="shop" class="home-btn"> 
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> 
+            преобразоваться!</a>
       </div>
 
    </section>
@@ -99,7 +104,7 @@ require_once "$path/private/head.php";
 
 <section class="home-category">
 
-   <h1 class="title">Категории</h1>
+   <h1 class="title">Category</h1>
 
    <div class="box-container">
 

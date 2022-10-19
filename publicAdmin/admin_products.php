@@ -95,7 +95,7 @@ require_once "$path/private/head.php";
          </div>
          <div class="inputBox">
          <input type="number" min="0" name="price" class="box" required placeholder="enter product price">
-         <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png">
+         <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png, image/gif">
          </div>
       </div>
       <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>

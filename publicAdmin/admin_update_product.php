@@ -85,7 +85,7 @@ require_once "$path/private/head.php";
          <option value="accessories">accessories</option>
       </select>
       <textarea name="details" required placeholder="enter product details" class="box" cols="30" rows="10"><?= $fetch_products['details']; ?></textarea>
-      <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
+      <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/gif">
       <div class="flex-btn">
          <span class="btn"><input type="submit" class="submit" value="update product" name="update_product"></span>
          <a href="admin_products.php" class="option-btn">go back</a>
