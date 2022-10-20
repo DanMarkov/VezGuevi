@@ -1,6 +1,6 @@
 <?
 $dbHost = "localhost";
-$dbName = "shop_db";
+$dbName = "vez_guevi";
 $dbUsername = "root";
 $dbPassword = "";
 session_start();

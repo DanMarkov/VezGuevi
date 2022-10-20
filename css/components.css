@@ -125,6 +125,10 @@ p:hover {
   color: var(--light-pink) !important;
 }
 
+ul, li {
+  list-style: none;
+}
+
 .disabled {
   user-select: none;
   pointer-events: none;
@@ -196,6 +200,7 @@ p:hover {
   position: relative;
   background-color: transparent;
   z-index: 1;
+  transition: 50ms ease-in-out all;
 }
 .btn-login.invalid {
   max-width: 50%;
@@ -507,6 +512,49 @@ p:hover {
 
 .footer {
   background-color: black;
+  padding: 3rem 4rem;
+}
+
+.footer__menu-link {
+  color: var(--white);
+  font-size: 2.3rem;
+  padding: 0.5rem 0;
+  transition: 0.5s;
+  background: linear-gradient(var(--green) 0 0) bottom/var(--t, 0) 2px no-repeat;
+}
+.footer__menu-link i {
+  color: var(--green);
+  padding-right: 1rem;
+}
+
+.footer__menu-link:hover {
+  --t: 100%;
+}
+
+.footer__item-title {
+  padding: 2rem;
+  font-size: 2.5rem;
+}
+
+.footer__items {
+  max-width: 113rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.year {
+  margin-top: 2rem;
+  padding: 2rem 62vh;
+  padding-bottom: 2.5rem;
+  line-height: 1.5;
+  border-top: 1px solid;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
 }
 
 .footer .box-container {
@@ -541,21 +589,13 @@ p:hover {
   --t: 100%;
 }
 
-.footer .year {
-  margin-top: 2rem;
-  padding: 2rem 1.5rem;
-  padding-bottom: 2.5rem;
-  line-height: 1.5;
-  border-top: 1px solid;
-  text-align: center;
-  font-size: 2rem;
-  color: white;
-}
-
 /* media queries  */
 @media (max-width: 991px) {
   html {
     font-size: 55%;
+  }
+  .year {
+    padding: 2rem 32vh;
   }
 }
 @media (max-width: 768px) {
@@ -587,6 +627,9 @@ p:hover {
   .update-profile form .flex .inputBox {
     width: 100%;
   }
+  .year {
+    padding: 2rem 18vh;
+  }
 }
 @media (max-width: 450px) {
   html {
@@ -598,6 +641,9 @@ p:hover {
   }
   .title {
     font-size: 3rem;
+  }
+  .year {
+    padding: 2rem 15vh;
   }
 }
 @keyframes animated_text {
