@@ -24,7 +24,7 @@ if(isset($message)){
          <a href="../publicAdmin/admin_products.php">products</a>
          <a href="../publicAdmin/admin_orders.php">orders</a>
          <a href="../publicAdmin/admin_users.php">users</a>
-         <a href="../publicAdmin/admin_contacts.php">messages</a>
+         <!-- <a href="../publicAdmin/admin_contacts.php">messages</a> -->
       </nav>
 
       <div class="icons">

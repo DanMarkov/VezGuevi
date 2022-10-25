@@ -24,14 +24,16 @@ if(isset($message)){
          <a href="home">home</a>
          <a href="shop">shop</a>
          <a href="orders">orders</a>
-         <a href="about">about</a>
-         <a href="contact">contact</a>
+         <a href="search">search!</a>
+         <a id="user-navbar">account</a>
+         <!-- <a href="about">about</a>
+         <a href="contact">contact</a> -->
       </nav>
 
       <div class="icons">
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="user-btn" class="fas fa-user"></div>
-         <a href="search" class="fas fa-search"></a>
+         <a href="search" class="fas fa-search search-icon"></a>
          <?php
             $count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
             $count_cart_items->execute([$user_id]);

@@ -395,6 +395,7 @@ ul, li {
   padding: 1rem;
   background: linear-gradient(var(--green) 0 0) bottom/var(--t, 0) 2px no-repeat;
   transition: 0.5s;
+  user-select: none;
 }
 
 .header .flex .navbar a:hover {
@@ -405,6 +406,10 @@ ul, li {
   font-size: 2.5rem;
   color: var(--light-color);
   margin-left: 1.5rem;
+}
+
+.header .flex .icons .search-icon {
+  display: none;
 }
 
 .header .flex .icons > *:hover {
@@ -429,13 +434,17 @@ ul, li {
   display: none;
 }
 
+#user-btn {
+  display: none;
+}
+
 .header .flex .profile {
   position: absolute;
   top: 120%;
   left: 2rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
-  border-radius: 0.5rem;
+  border-radius: 3rem;
   padding: 2rem;
   text-align: center;
   background-color: var(--white);
@@ -584,8 +593,6 @@ ul, li {
 }
 
 .footer .box-container .box a:hover {
-  /* text-decoration: underline;
-  color:var(--green); */
   --t: 100%;
 }
 
@@ -598,8 +605,14 @@ ul, li {
     padding: 2rem 32vh;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 806px) {
   #menu-btn {
+    display: inline-block;
+  }
+  #user-btn {
+    display: inline-block;
+  }
+  .header .flex .icons .search-icon {
     display: inline-block;
   }
   .header .flex .navbar {
@@ -612,6 +625,7 @@ ul, li {
     right: 0;
     transition: 0.2s linear;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    border-radius: 3rem;
   }
   .header .flex .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
