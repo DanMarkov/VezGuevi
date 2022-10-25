@@ -44,17 +44,22 @@ if(isset($message)){
          <a href="cart"><i class="fas fa-shopping-cart"></i><span>(<?= $count_cart_items->rowCount(); ?>)</span></a>
       </div>
 
+
       <div class="profile">
-         <?php
-            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
-         <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
-         <p><?= $fetch_profile['name']; ?></p>
+         <div class="profile-detail">
+            <?php
+               $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+               $select_profile->execute([$user_id]);
+               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+            <p><?= $fetch_profile['name']; ?></p>
+         </div>
+         <hr>
          <a href="update" class="btn">update profile</a>
          <a href="../system/logout.php" class="delete-btn">logout</a>
       </div>
+
 
    </div>
 

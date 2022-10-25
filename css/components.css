@@ -1,23 +1,27 @@
 @import url(https://fonts.bunny.net/css?family=aclonica:400|aldrich:400|bungee-shade:400|rubik:300,400,500,600|great-vibes:400);
 :root {
-  --green:#f58a07;
-  --orange:#12b3f3;
-  --red:#e74c3c;
-  --black:#333;
-  --light-color:#4d4d4d;
-  --white:#fff;
+  --green: #f58a07;
+  --orange: #12b3f3;
+  --red: #e74c3c;
+  --black: #333;
+  --light-color: #4d4d4d;
+  --white: #fff;
   --pink: #df8888;
   --light-green: #15ff2f;
-  --light-bg:#f6f6f6;
-  --border:.2rem solid var(--black);
-  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --light-bg: #f6f6f6;
+  --border: 0.2rem solid var(--black);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   --light-pink: #e47be5;
   --light-black: #21252e;
   --bold-red: #fa573a;
-  --neo-pink: #FF10F0;
+  --neo-pink: #ff10f0;
 }
 
-*, body, a, a:hover, .btn {
+*,
+body,
+a,
+a:hover,
+.btn {
   cursor: url("../images/cursor.gif"), auto;
 }
 
@@ -102,7 +106,8 @@ section {
   margin: 0 auto;
 }
 
-h3, .name {
+h3,
+.name {
   text-transform: uppercase;
   color: var(--black);
   padding: 1rem 0;
@@ -125,7 +130,8 @@ p:hover {
   color: var(--light-pink) !important;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -202,9 +208,11 @@ ul, li {
   z-index: 1;
   transition: 50ms ease-in-out all;
 }
+
 .btn-login.invalid {
   max-width: 50%;
 }
+
 .btn-login.left {
   transform: translate(100%, 0);
 }
@@ -441,11 +449,11 @@ ul, li {
 .header .flex .profile {
   position: absolute;
   top: 120%;
-  left: 2rem;
+  right: 20rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
   border-radius: 3rem;
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
   background-color: var(--white);
   width: 33rem;
@@ -457,18 +465,29 @@ ul, li {
   display: inline-block;
 }
 
+.profile-detail {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .header .flex .profile img {
-  height: 15rem;
-  width: 15rem;
+  height: 8rem;
+  width: 8rem;
   margin-bottom: 1rem;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .header .flex .profile p {
-  padding: 0.5rem 0;
-  font-size: 2rem;
+  padding: 0.5rem 3rem;
+  font-size: 3rem;
   color: var(--light-color);
+}
+
+hr {
+  border: solid 0.1rem var(--light-color);
 }
 
 .update-profile form {
@@ -531,6 +550,7 @@ ul, li {
   transition: 0.5s;
   background: linear-gradient(var(--green) 0 0) bottom/var(--t, 0) 2px no-repeat;
 }
+
 .footer__menu-link i {
   color: var(--green);
   padding-right: 1rem;
@@ -614,6 +634,9 @@ ul, li {
   }
   .header .flex .icons .search-icon {
     display: inline-block;
+  }
+  .header .flex .profile {
+    left: 2rem;
   }
   .header .flex .navbar {
     border-top: var(--border);
