@@ -1,5 +1,12 @@
 @import url('components.css');
 
+@mixin hover-shadow {
+   box-shadow: -.5rem .5rem #ff51c5, 
+   -1.5rem 1.5rem 2rem -1rem #ff51c5,
+   .5rem -.5rem #00f6ff,
+   .5rem -.5rem 2rem #00f6ff; 
+ }
+
 .dashboard .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
@@ -14,6 +21,11 @@
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
+   transition: box-shadow .2s;
+}
+
+.dashboard .box-container .box:hover {
+   @include hover-shadow;
 }
 
 .dashboard .box-container .box h3{
@@ -90,6 +102,11 @@
    border-radius: .5rem;
    padding:2rem;
    position: relative;
+   transition: box-shadow .2s;
+}
+
+.show-products .box-container .box:hover {
+   @include hover-shadow;
 }
 
 .show-products .box-container .box .price{
@@ -168,6 +185,11 @@
    background-color: var(--white);
    border-radius: .5rem;
    padding:2rem;
+   transition: box-shadow .2s;
+}
+
+.placed-orders .box-container .box:hover {
+   @include hover-shadow;
 }
 
 .placed-orders .box-container .box p{
@@ -206,6 +228,11 @@
    border-radius: .5rem;
    padding:2rem;
    text-align: center;
+   transition: box-shadow .2s;
+}
+
+.user-accounts .box-container .box:hover {
+   @include hover-shadow;
 }
 
 .user-accounts .box-container .box img{
@@ -241,6 +268,7 @@
    background-color: var(--white);
    border-radius: .5rem;
    padding:2rem;
+   
 }
 
 .messages .box-container .box p{

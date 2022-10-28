@@ -24,6 +24,7 @@ if(isset($message)){
          <a href="../publicAdmin/admin_products.php">products</a>
          <a href="../publicAdmin/admin_orders.php">orders</a>
          <a href="../publicAdmin/admin_users.php">users</a>
+         <a id="user-navbar">account</a>
          <!-- <a href="../publicAdmin/admin_contacts.php">messages</a> -->
       </nav>
 
@@ -33,13 +34,17 @@ if(isset($message)){
       </div>
 
       <div class="profile">
-         <?php
-            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-            $select_profile->execute([$admin_id]);
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
-         <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
-         <p><?= $fetch_profile['name']; ?></p>
+         <div class="profile-detail">
+            <?php
+               $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+               $select_profile->execute([$admin_id]);
+               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+            <p><?= $fetch_profile['name']; ?></p>
+
+         </div>
+         <hr>
          <a href="../publicAdmin/admin_update_profile.php" class="btn">update profile</a>
          <a href="../system/logout.php" class="delete-btn">logout</a>
       </div>

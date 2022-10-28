@@ -269,6 +269,13 @@ li {
   flex: 1;
 }
 
+@mixin hover-shadow {
+  box-shadow: -.5rem .5rem #ff51c5, 
+  -1.5rem 1.5rem 2rem -1rem #ff51c5,
+  .5rem -.5rem #00f6ff,
+  .5rem -.5rem 2rem #00f6ff; 
+}
+
 .title {
   text-align: center;
   margin-bottom: 2rem;
@@ -390,7 +397,6 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding:2rem; */
   padding: 8px 20px;
   border-radius: 3rem;
   flex-wrap: wrap;
@@ -477,10 +483,15 @@ li {
   width: 33rem;
   display: none;
   animation: fadeIn 0.2s linear;
+  transition: box-shadow .2s;
 }
 
 .header .flex .profile.active {
   display: inline-block;
+}
+
+.header .flex .profile.active:hover{
+  @include hover-shadow;
 }
 
 .profile-detail {

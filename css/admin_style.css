@@ -13,6 +13,11 @@
   box-shadow: var(--box-shadow);
   background-color: var(--white);
   border-radius: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard .box-container .box:hover {
+  box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
 .dashboard .box-container .box h3 {
@@ -88,6 +93,11 @@
   border-radius: 0.5rem;
   padding: 2rem;
   position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.show-products .box-container .box:hover {
+  box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
 .show-products .box-container .box .price {
@@ -167,6 +177,11 @@
   background-color: var(--white);
   border-radius: 0.5rem;
   padding: 2rem;
+  transition: box-shadow 0.2s;
+}
+
+.placed-orders .box-container .box:hover {
+  box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
 .placed-orders .box-container .box p {
@@ -205,6 +220,11 @@
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.user-accounts .box-container .box:hover {
+  box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
 .user-accounts .box-container .box img {
