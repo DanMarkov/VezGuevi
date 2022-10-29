@@ -195,12 +195,12 @@ li {
 .btn-login {
   display: block;
   max-width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
   border: 3px solid var(--green);
   border-radius: 0.5rem;
   color: var(--green);
   font-size: 2rem;
-  padding: 1.3rem 3rem;
+  padding: 1rem 3rem;
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -319,11 +319,10 @@ li {
 .form-container form {
   width: 50rem;
   background-color: var(--white);
-  border-radius: 0.5rem;
-  box-shadow: var(--box-shadow);
-  border: var(--border);
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.8rem 2.4rem;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .form-container form h3 {
@@ -331,21 +330,26 @@ li {
   color: var(--black);
   margin-bottom: 1rem;
   text-transform: uppercase;
+  padding-top: 4.5rem;
 }
 
 .form-container form .box {
   width: 100%;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
-  border: var(--border);
+  margin-top: 2rem;
+  border-radius: 3rem;
+  border: 0.2rem solid #f4f6f9;
   padding: 1.2rem 1.4rem;
   font-size: 1.8rem;
   color: var(--black);
-  background-color: var(--light-bg);
+  background: transparent;
+}
+
+.form-container form .box::placeholder {
+  padding: 1rem;
 }
 
 .form-container form p {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 2.2rem;
   color: var(--light-color);
 }
