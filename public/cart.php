@@ -59,8 +59,8 @@ require_once "$path/private/head.php";
          while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" method="POST" class="box">
-      <a href="cart.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
-      <a href="view_page.php?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
+      <a href="cart?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
+      <a href="view?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
       <div class="name"><?= $fetch_cart['name']; ?></div>
       <div class="price">$<?= $fetch_cart['price']; ?>/-</div>
@@ -83,7 +83,7 @@ require_once "$path/private/head.php";
    <div class="cart-total">
       <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
       <a href="shop" class="option-btn">continue shopping</a>
-      <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
+      <a href="cart?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
       <a href="checkout" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
    </div>
 

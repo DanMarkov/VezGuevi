@@ -90,6 +90,38 @@ require_once "$path/private/head.php";
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" class="box" method="POST">
+      <div class="img">
+         <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="desktop product">
+      </div>
+      <div class="column-2">
+         <div class="category"><?= $fetch_products['category']; ?></div>
+         <div class="name"><?= $fetch_products['name']; ?></div>
+         <div class="details"><?= $fetch_products['details']; ?></div>
+         <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+         <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
+         <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
+         <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+         <input type="number" min="1" value="1" name="p_qty" class="qty">
+         <div class="price">$<?= $fetch_products['price']; ?></div>
+         <span class="option-btn"><i class="fas fa-heart"></i><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span>
+         <span class="btn"><i class="fas fa-shopping-cart"></i><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>
+      </div>
+   </form>
+   <?php
+         }
+      }else{
+         echo '<p class="empty">no products added yet!</p>';
+      }
+   ?>
+
+   <!-- <?php
+      $pid = $_GET['pid'];
+      $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+      $select_products->execute([$pid]);
+      if($select_products->rowCount() > 0){
+         while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
+   ?>
+   <form action="" class="box" method="POST">
       <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
@@ -108,7 +140,7 @@ require_once "$path/private/head.php";
          echo '<p class="empty">no products added yet!</p>';
       }
    ?>
-
+ -->
 </section>
 
 

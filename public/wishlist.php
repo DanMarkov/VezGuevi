@@ -84,8 +84,8 @@ require_once "$path/private/head.php";
          while($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" method="POST" class="box">
-      <a href="wishlist.php?delete=<?= $fetch_wishlist['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from wishlist?');"></a>
-      <a href="view_page.php?pid=<?= $fetch_wishlist['pid']; ?>" class="fas fa-eye"></a>
+      <a href="wishlist?delete=<?= $fetch_wishlist['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from wishlist?');"></a>
+      <a href="view?pid=<?= $fetch_wishlist['pid']; ?>" class="fas fa-eye"></a>
       <img src="../uploaded_img/<?= $fetch_wishlist['image']; ?>" alt="">
       <div class="name"><?= $fetch_wishlist['name']; ?></div>
       <div class="price">$<?= $fetch_wishlist['price']; ?>/-</div>
@@ -108,7 +108,7 @@ require_once "$path/private/head.php";
    <div class="wishlist-total">
       <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
       <a href="shop" class="option-btn">continue shopping</a>
-      <a href="wishlist.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
+      <a href="wishlist?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
    </div>
 
 </section>

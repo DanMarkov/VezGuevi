@@ -15,6 +15,9 @@
   --light-black: #21252e;
   --bold-red: #fa573a;
   --neo-pink: #ff10f0;
+  --other-grey: #969492;
+  --other-green: 3d8168;
+  --product-bg: #E70C7A;
 }
 
 *,
@@ -23,6 +26,7 @@ a,
 a:hover,
 .btn {
   cursor: url('../images/cursor.gif'), auto;
+
 }
 
 * {
@@ -150,7 +154,8 @@ li {
 .btn,
 .delete-btn,
 .option-btn {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin-top: 1rem;
   border: 3px solid var(--green);
@@ -163,6 +168,10 @@ li {
   position: relative;
   background-color: transparent;
   z-index: 1;
+}
+
+.option-btn i, .btn i {
+  padding-right: .7rem;
 }
 
 .btn::before,
@@ -205,7 +214,8 @@ li {
 }
 
 .btn-login {
-  display: block;
+  display: flex;
+  justify-content: center;
   max-width: 100%;
   margin-top: 3rem;
   border: 3px solid var(--green);
@@ -717,6 +727,7 @@ hr {
   .year {
     padding: 2rem 18vh;
   }
+
 }
 @media (max-width: 450px) {
   html {
