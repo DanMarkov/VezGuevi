@@ -99,6 +99,41 @@ require_once "$path/private/head.php";
       if($select_products->rowCount() > 0){
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
+   <a href="view?pid=<?= $fetch_products['id']; ?>" >
+      <form action="" class="box" method="POST">
+         <div class="img">
+            <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="product">
+         </div>
+         <div class="box-details">
+            <div class="name"><?= $fetch_products['name']; ?></div>
+            <div class="details"><?= $fetch_products['details']; ?></div>
+         </div>
+         <div class="price">
+            <div class="price_num">$<span><?= $fetch_products['price']; ?></span></div>
+         </div>
+         <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+         <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
+         <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
+         <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+         <!-- <input type="number" min="1" value="1" name="p_qty" class="qty"> -->
+         <span class="option-btn"><i class="fas fa-heart"></i><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span> 
+         <span class="btn"><i class="fas fa-shopping-cart"></i><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>
+      </form>
+   </a>
+      <?php 
+      }
+   }else{
+      echo '<p class="empty">no products added yet!</p>';
+   }
+   ?>
+
+
+   <!-- <?php
+      $select_products = $conn->prepare("SELECT * FROM `products`");
+      $select_products->execute();
+      if($select_products->rowCount() > 0){
+         while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
+   ?>
    <form action="" class="box" method="POST">
       <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
       <a href="view?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
@@ -117,7 +152,7 @@ require_once "$path/private/head.php";
    }else{
       echo '<p class="empty">no products added yet!</p>';
    }
-   ?>
+   ?> -->
 
    </div>
 
