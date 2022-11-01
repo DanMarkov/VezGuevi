@@ -86,52 +86,68 @@
 }
 
 .show-products .box-container .box {
-  text-align: center;
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  background-color: var(--white);
-  border-radius: 0.5rem;
-  padding: 2rem;
   position: relative;
-  transition: box-shadow 0.2s;
+  width: 33.5rem;
+  padding: 2rem 3rem 3rem 3rem;
+  overflow: hidden;
+  text-align: center;
+  background: var(--product-bg);
+  box-shadow: inset -2rem 2rem 2rem 0.5rem rgb(231, 12, 122), inset 2rem -2rem 2rem 0 rgb(180, 17, 102), inset 0 0 2rem 0 rgb(180, 17, 102), -1.5rem 1.5rem 2rem 0 rgba(0, 0, 0, 0.52), 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+  border-radius: 2.5rem;
+  transition: 0.5s, box-shadow 0.2s;
+  z-index: 3;
 }
 
 .show-products .box-container .box:hover {
   box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
-.show-products .box-container .box .price {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  padding: 1rem;
-  font-size: 2rem;
-  color: var(--white);
-  background-color: var(--red);
-  border-radius: 0.5rem;
-}
-
 .show-products .box-container .box img {
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  transition: 0.5s;
+  transform: rotate(10deg);
+  filter: drop-shadow(-0.3rem, 0.6rem, 0.3rem rgba(110, 0, 0, 0.5));
 }
 
-.show-products .box-container .box .name {
+.show-products .box-container .box img:hover {
+  transform: rotate(20deg) scale(1.15);
+  filter: drop-shadow(-0.7rem 0.6rem 0.7rem rgb(110, 0, 0));
+}
+
+.show-products .box-container .box .box-details .name {
   margin: 0.5rem 0;
-  font-size: 2rem;
   color: var(--black);
 }
 
-.show-products .box-container .box .cat {
+.show-products .box-container .box .box-details .cat {
   font-size: 1.8rem;
   color: var(--green);
 }
 
 .show-products .box-container .box .details {
-  padding-top: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: var(--light-color);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.show-products .box-container .box .price .price_num {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--red);
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.show-products .box-container .box .price .price_num span {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin: 0 0.2rem;
 }
 
 .update-product form {

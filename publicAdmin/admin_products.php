@@ -117,6 +117,25 @@ require_once "$path/private/head.php";
          while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <div class="box">
+      <div class="img">
+         <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="product">
+      </div>
+      <div class="box-details">
+         <div class="name"><?= $fetch_products['name']; ?></div>
+         <div class="cat"><?= $fetch_products['category']; ?></div>
+         <div class="details"><?= $fetch_products['details']; ?></div>
+      </div>
+      <div class="price">
+         <div class="price_num">$<span><?= $fetch_products['price']; ?></span></div>
+      </div>
+      <div class="flex-btn">
+         <a href="admin_update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
+         <a href="admin_products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
+      </div>
+   </div>
+   
+   <!-- <div class="box">
+      
       <div class="price">$<?= $fetch_products['price']; ?>/-</div>
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
@@ -126,7 +145,7 @@ require_once "$path/private/head.php";
          <a href="admin_update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="admin_products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>
-   </div>
+   </div> -->
    <?php
       }
    }else{
