@@ -60,16 +60,15 @@ require_once "$path/private/head.php";
    ?>
    <form action="" method="POST" class="box">
       <a href="cart?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
-      <a href="view?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
       <div class="name"><?= $fetch_cart['name']; ?></div>
-      <div class="price">$<?= $fetch_cart['price']; ?>/-</div>
+      <div class="price">$<?= $fetch_cart['price']; ?></div>
       <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-      <div class="flex-btn">
+      <!-- <div class="flex-btn">
          <input type="number" min="1" value="<?= $fetch_cart['quantity']; ?>" class="qty" name="p_qty">
          <span class="option-btn"><input type="submit" value="update" name="update_qty" class="submit"></span>
-      </div>
-      <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</span> </div>
+      </div> -->
+      <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
    </form>
    <?php
       $grand_total += $sub_total;
@@ -80,8 +79,39 @@ require_once "$path/private/head.php";
    ?>
    </div>
 
+   <!-- <div class="box-container">
+
+   <?php
+      $grand_total = 0;
+      $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+      $select_cart->execute([$user_id]);
+      if($select_cart->rowCount() > 0){
+         while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){ 
+   ?>
+   <form action="" method="POST" class="box">
+      <a href="cart?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
+      <a href="view?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
+      <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
+      <div class="name"><?= $fetch_cart['name']; ?></div>
+      <div class="price">$<?= $fetch_cart['price']; ?></div>
+      <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
+      <div class="flex-btn">
+         <input type="number" min="1" value="<?= $fetch_cart['quantity']; ?>" class="qty" name="p_qty">
+         <span class="option-btn"><input type="submit" value="update" name="update_qty" class="submit"></span>
+      </div>
+      <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
+   </form>
+   <?php
+      $grand_total += $sub_total;
+      }
+   }else{
+      echo '<p class="empty">your cart is empty</p>';
+   }
+   ?>
+   </div> -->
+
    <div class="cart-total">
-      <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
+      <p>grand total: <span>$<?= $grand_total; ?></span></p>
       <a href="shop" class="option-btn">continue shopping</a>
       <a href="cart?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>">delete all</a>
       <a href="checkout" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
