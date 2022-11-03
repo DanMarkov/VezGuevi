@@ -24,13 +24,22 @@ if(isset($message)){
          <a href="../publicAdmin/admin_products.php">products</a>
          <a href="../publicAdmin/admin_orders.php">orders</a>
          <a href="../publicAdmin/admin_users.php">users</a>
-         <a id="user-navbar">account</a>
+         <!-- <a id="user-navbar">account</a> -->
          <!-- <a href="../publicAdmin/admin_contacts.php">messages</a> -->
       </nav>
 
       <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"></div>
+      <svg class="theme-icon" id="menu-btn" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M46 40H2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M46 24H2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M46 8H2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+         </svg>
+         <svg class="theme-icon" id="user-btn" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.1628 13.2558C13.1628 16.241 14.3487 19.104 16.4595 21.2149C18.5704 23.3258 21.4334 24.5116 24.4186 24.5116C27.4038 24.5116 30.2668 23.3258 32.3777 21.2149C34.4885 19.104 35.6744 16.241 35.6744 13.2558C35.6744 10.2706 34.4885 7.40763 32.3777 5.29675C30.2668 3.18588 27.4038 2 24.4186 2C21.4334 2 18.5704 3.18588 16.4595 5.29675C14.3487 7.40763 13.1628 10.2706 13.1628 13.2558V13.2558Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6 46C6 41.1151 7.94053 36.4302 11.3947 32.9761C14.8488 29.5219 19.5337 27.5814 24.4186 27.5814C29.3035 27.5814 33.9884 29.5219 37.4425 32.9761C40.8967 36.4302 42.8372 41.1151 42.8372 46H6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+         </svg>
+         <!-- <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div> -->
       </div>
 
       <div class="profile">

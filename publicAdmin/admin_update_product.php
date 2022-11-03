@@ -60,6 +60,8 @@ require_once "$path/private/head.php";
    
 <? require_once "$path/private/admin_header.php"; ?>
 
+
+
 <section class="update-product">
 
    <h1 class="title">update product</h1>   

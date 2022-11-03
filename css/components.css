@@ -147,7 +147,10 @@ li {
 .btn,
 .delete-btn,
 .option-btn {
-  display: flex;
+  display: grid;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: end;
   justify-content: center;
   width: 100%;
   margin-top: 1rem;
@@ -163,7 +166,7 @@ li {
   z-index: 1;
 }
 
-.option-btn i, .btn i {
+.option-btn .theme-icon, .btn .theme-icon {
   padding-right: 0.7rem;
 }
 
@@ -423,14 +426,30 @@ li {
   --t: 100%;
 }
 
+.header .flex .icons {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
 .header .flex .icons > * {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--light-color);
   margin-left: 1.5rem;
 }
 
+.theme-icon {
+  width: 3.5rem;
+}
+
 .header .flex .icons .search-icon {
   display: none;
+}
+
+.header .flex .icons .cart {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: end;
 }
 
 .header .flex .icons > *:hover {
@@ -442,11 +461,6 @@ li {
   color: var(--light-color);
 }
 
-.header .flex .icons a:hover span,
-.header .flex .icons a:hover i {
-  color: var(--green);
-}
-
 .header .flex .icons a span {
   font-size: 2rem;
 }
@@ -455,14 +469,10 @@ li {
   display: none;
 }
 
-#user-btn {
-  display: none;
-}
-
 .header .flex .profile {
   position: absolute;
   top: 120%;
-  right: 20rem;
+  left: 0;
   box-shadow: var(--box-shadow);
   border: var(--border);
   border-radius: 3rem;
@@ -651,7 +661,7 @@ hr {
     display: inline-block;
   }
   .header .flex .icons .search-icon {
-    display: inline-block;
+    display: grid;
   }
   .header .flex .profile {
     left: 2rem;

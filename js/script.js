@@ -7,10 +7,10 @@ document.querySelector('#menu-btn').onclick = () =>{
 
 let profile = document.querySelector('.header .flex .profile');
 
-document.querySelector('#user-navbar').onclick = () =>{
-   profile.classList.toggle('active');
-   navbar.classList.remove('active');
-}
+// document.querySelector('#user-navbar').onclick = () =>{
+//    profile.classList.toggle('active');
+//    navbar.classList.remove('active');
+// }
 
 document.querySelector('#user-btn').onclick = () =>{
    profile.classList.toggle('active');
