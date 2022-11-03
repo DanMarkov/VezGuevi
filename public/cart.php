@@ -59,13 +59,13 @@ require_once "$path/private/head.php";
          while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <form action="" method="POST" class="box">
-      <a href="cart?delete=<?= $fetch_cart['id'];?>" 
+      <a href="cart?delete=<?= $fetch_cart['id'];?>" onclick="return confirm('delete this from cart?');"> 
          <svg class="theme-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M46 2L2 46" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M46 2L2 46" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
          <path d="M46 46L2 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
          </svg>
       </a>
-      <a href="cart?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
+      <!-- <a href="cart?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a> -->
       <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
       <div class="name"><?= $fetch_cart['name']; ?></div>
       <div class="price">$<?= $fetch_cart['price']; ?></div>
@@ -74,7 +74,7 @@ require_once "$path/private/head.php";
          <input type="number" min="1" value="<?= $fetch_cart['quantity']; ?>" class="qty" name="p_qty">
          <span class="option-btn"><input type="submit" value="update" name="update_qty" class="submit"></span>
       </div>
-      <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
+      <div class="sub-total"> sub total: <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
    </form>
    <?php
       $grand_total += $sub_total;
