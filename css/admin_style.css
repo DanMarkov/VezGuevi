@@ -1,19 +1,21 @@
 @import url("components.css");
 .dashboard .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: 1.5rem;
   align-items: flex-start;
 }
 
 .dashboard .box-container .box {
-  padding: 1.5rem;
+  max-width: 50rem;
+  min-width: 28rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
   text-align: center;
-  border: var(--border);
+  background: radial-gradient(#fdfbfb, #ebedee);
   box-shadow: var(--box-shadow);
-  background-color: var(--white);
   border-radius: 0.5rem;
-  transition: box-shadow 0.2s;
 }
 
 .dashboard .box-container .box:hover {
@@ -37,13 +39,13 @@
 }
 
 .add-products form {
-  max-width: 70rem;
-  padding: 2rem;
+  max-width: 50rem;
   margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
   text-align: center;
-  border: var(--border);
+  background: radial-gradient(#fdfbfb, #ebedee);
   box-shadow: var(--box-shadow);
-  background-color: var(--white);
   border-radius: 0.5rem;
 }
 
@@ -193,12 +195,13 @@
 }
 
 .placed-orders .box-container .box {
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  background-color: var(--white);
-  border-radius: 0.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 2rem;
   padding: 2rem;
-  transition: box-shadow 0.2s;
+  background: radial-gradient(#fdfbfb, #ebedee);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
 }
 
 .placed-orders .box-container .box:hover {
@@ -235,13 +238,14 @@
 }
 
 .user-accounts .box-container .box {
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  background-color: var(--white);
-  border-radius: 0.5rem;
+  min-width: 28rem;
+  margin: 0 auto;
+  margin-top: 2rem;
   padding: 2rem;
   text-align: center;
-  transition: box-shadow 0.2s;
+  background: radial-gradient(#fdfbfb, #ebedee);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
 }
 
 .user-accounts .box-container .box:hover {

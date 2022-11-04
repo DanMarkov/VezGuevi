@@ -22,7 +22,7 @@ require_once "$path/private/head.php";
    <h1 class="title">dashboard</h1>
 
    <div class="box-container">
-
+<!-- 
       <div class="box">
       <?php
          $total_pendings = 0;
@@ -32,10 +32,10 @@ require_once "$path/private/head.php";
             $total_pendings += $fetch_pendings['total_price'];
          };
       ?>
-      <h3>$<?= $total_pendings; ?>/-</h3>
+      <h3>$<?= $total_pendings; ?></h3>
       <p>total pendings</p>
       <a href="admin_orders.php" class="btn">see orders</a>
-      </div>
+      </div> -->
 
       <div class="box">
       <?php
@@ -46,7 +46,7 @@ require_once "$path/private/head.php";
             $total_completed += $fetch_completed['total_price'];
          };
       ?>
-      <h3>$<?= $total_completed; ?>/-</h3>
+      <h3>$<?= $total_completed; ?></h3>
       <p>completed orders</p>
       <a href="admin_orders.php" class="btn">see orders</a>
       </div>
@@ -106,7 +106,7 @@ require_once "$path/private/head.php";
       <a href="admin_users.php" class="btn">see accounts</a>
       </div>
 
-      <div class="box">
+      <!-- <div class="box">
       <?php
          $select_messages = $conn->prepare("SELECT * FROM `message`");
          $select_messages->execute();
@@ -115,7 +115,7 @@ require_once "$path/private/head.php";
       <h3><?= $number_of_messages; ?></h3>
       <p>total messages</p>
       <a href="admin_contacts.php" class="btn">see messages</a>
-      </div>
+      </div> -->
 
    </div>
 

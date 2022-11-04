@@ -1202,14 +1202,28 @@
 }
 
 .placed-orders .box-container .box{
-   padding:1rem 2rem;
-   flex:1 1 40rem;
-   border:var(--border);
-   background-color: var(--white);
+   max-width: 50rem;
+   margin: 0 auto;
+   margin-top: 2rem;
+   padding: 2rem;
+   // text-align: center;
+   // border:var(--border);
+   background: radial-gradient(#fdfbfb, #ebedee);
+   // background-color: var(--white);
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
-   transition: box-shadow .2s;
 }
+
+// .placed-orders .box-container .box{
+//    padding:1rem 2rem;
+//    flex:1 1 40rem;
+//    border:var(--border);
+//    background-color: var(--white);
+//    box-shadow: var(--box-shadow);
+//    border-radius: .5rem;
+//    transition: box-shadow .2s;
+// }
+
 
 .placed-orders .box-container .box:hover{
    @include hover-shadow;

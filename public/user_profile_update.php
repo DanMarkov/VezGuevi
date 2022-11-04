@@ -81,6 +81,34 @@ require_once "$path/private/head.php";
       <img src="uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
       <div class="flex">
          <div class="inputBox">
+            <span>username:</span>
+            <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" placeholder="update username" required class="box">
+            <span>email:</span>
+            <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="update email" required class="box">
+            <span>update pic:</span>
+            <input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/gif" class="box">
+            <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>">
+         </div>
+         <div class="inputBox">
+            <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>">
+            <span>old password:</span>
+            <input type="password" name="update_pass" placeholder="enter previous password" class="box">
+            <span>new password:</span>
+            <input type="password" name="new_pass" placeholder="enter new password" class="box">
+            <span>confirm password:</span>
+            <input type="password" name="confirm_pass" placeholder="confirm new password" class="box">
+         </div>
+      </div>
+      <div class="flex-btn">
+         <span class="btn"><input type="submit" class="submit" value="update profile" name="update_profile"></span>
+         <a href="home" class="option-btn">go back</a>
+      </div>
+   </form>
+
+   <!-- <form action="" method="POST" enctype="multipart/form-data">
+      <img src="uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+      <div class="flex">
+         <div class="inputBox">
             <span>username :</span>
             <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" placeholder="update username" required class="box">
             <span>email :</span>
@@ -103,7 +131,7 @@ require_once "$path/private/head.php";
          <span class="btn"><input type="submit" class="submit" value="update profile" name="update_profile"></span>
          <a href="home.php" class="option-btn">go back</a>
       </div>
-   </form>
+   </form> -->
 
 </section>
 

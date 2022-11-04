@@ -920,13 +920,13 @@
 }
 
 .placed-orders .box-container .box {
-  padding: 1rem 2rem;
-  flex: 1 1 40rem;
-  border: var(--border);
-  background-color: var(--white);
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: radial-gradient(#fdfbfb, #ebedee);
   box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
-  transition: box-shadow 0.2s;
 }
 
 .placed-orders .box-container .box:hover {

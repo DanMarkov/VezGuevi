@@ -39,10 +39,10 @@ require_once "$path/private/head.php";
       ?>
       <div class="box" style="<?php if($fetch_users['id'] == $admin_id){ echo 'display:none'; }; ?>">
          <img src="../uploaded_img/<?= $fetch_users['image']; ?>" alt="">
-         <p> user id : <span><?= $fetch_users['id']; ?></span></p>
-         <p> username : <span><?= $fetch_users['name']; ?></span></p>
-         <p> email : <span><?= $fetch_users['email']; ?></span></p>
-         <p> user type : <span style=" color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'orange'; }; ?>"><?= $fetch_users['user_type']; ?></span></p>
+         <p> user id: <span><?= $fetch_users['id']; ?></span></p>
+         <p> username: <span><?= $fetch_users['name']; ?></span></p>
+         <p> email: <span><?= $fetch_users['email']; ?></span></p>
+         <p> user type: <span style=" color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'orange'; }; ?>"><?= $fetch_users['user_type']; ?></span></p>
          <a href="admin_users.php?delete=<?= $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete</a>
       </div>
       <?php
