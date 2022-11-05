@@ -100,7 +100,7 @@
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
-   border-radius: .5rem;
+   border-radius: .6rem;
    background-color: var(--light-bg);
    border:var(--border);
 }
@@ -340,7 +340,7 @@
    width: 100%;
    border: var(--border);
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: .6rem;
    background-color: var(--light-bg);
    padding: 1.2rem 1.4rem;
    font-size: 1.8rem;
@@ -382,11 +382,13 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
    gap:1.5rem;
-   align-items: flex-start;
+   align-items: stretch;
    justify-content:center;
 }
 
 .placed-orders .box-container .box{
+   display: grid;
+   align-items: end;
    max-width: 50rem;
    margin: 0 auto;
    margin-top: 2rem;
@@ -428,7 +430,7 @@
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    border:var(--border);
-   border-radius: .5rem;
+   border-radius: .6rem;
    background-color: var(--light-bg);
    margin-bottom: .5rem;
 }
@@ -544,12 +546,12 @@
       margin-bottom: 4.5rem;
    } 
 
-   form span .input-label {
+   .add-products form span .input-label {
       transform: translate(1rem, -22.5rem);
    }
 
-   form span .box:focus + .input-label, 
-   form span .box:valid + .input-label {
+   .add-products  form span .box:focus + .input-label, 
+   .add-products  form span .box:valid + .input-label {
       transform: translate(0.5rem, -27.5rem);
    }
 

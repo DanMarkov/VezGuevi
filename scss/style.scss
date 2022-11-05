@@ -490,7 +490,7 @@
 
 .quick-view .box .qty{
    margin:.5rem 0;
-   border-radius: .5rem;
+   border-radius: .6rem;
    padding: 1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
@@ -754,6 +754,7 @@
 .search-img {
    width: 45rem;
    height: 12rem;
+   border-radius: 3rem;
 }
 
 
@@ -762,26 +763,28 @@
    display: flex;
    gap: 1.5rem;
    align-items: center;
+   position: relative;
 }
 
-.search-form form .search-span {
+.search-form form span {
    position: relative;
    width: 100%;
+   margin-top: 2rem;
 }
 
-.search-form form .search-span .box{
+.search-form form span .box{
    width: 100%;
-   padding:1.4rem;
-   border:var(--border);
-   margin:1rem 0;
+   padding: 1.4rem;
+   border: var(--border);
+   margin: 1rem 0;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    font-size: 2rem;
-   color:var(--black);
-   border-radius: .5rem;
+   color: var(--black);
+   border-radius: .6rem;
 }
 
-.search-form form .search-span .input-label {
+.search-form form span .input-label {
    position: absolute;
    top: 0; left: 0;
    transform: translate(1rem, 1.5rem);
@@ -791,15 +794,33 @@
    font-size: 1.8rem;
  }
 
- .search-form form .search-span .box:focus + .input-label {
+ .search-form form span .box:focus + .input-label {
    transform: translate(.5rem, -2.5rem);
  }
 
-.search-form form .btn{
+.search-form form .search_btn {
+   // background: var(--search-btn-bg);
    display: inline-block;
    width: auto;
    margin-top: 0;
+   border: none;
+   height: 1.5rem;
+   // transform: translateX(-5.8rem);
+   border-radius: .6rem;
+   background: none;
+   position: absolute;
+   right: 10px;
 }
+
+// .search-form form .search_btn .theme-icon {
+//    stroke: var(--light-blue);
+// }
+
+// .search-form form .btn{
+//    display: inline-block;
+//    width: auto;
+//    margin-top: 0;
+// }
 
 .wishlist .box-container{
    // display: grid;
@@ -1103,7 +1124,7 @@
 
 .shopping-cart .box-container .box .qty{
    margin-top: 1rem;
-   border-radius: .5rem;
+   border-radius: .6rem;
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);

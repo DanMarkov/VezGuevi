@@ -384,7 +384,7 @@
 
 .quick-view .box .qty {
   margin: 0.5rem 0;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
   padding: 1.2rem 1.4rem;
   font-size: 1.8rem;
   color: var(--black);
@@ -627,20 +627,23 @@
 .search-img {
   width: 45rem;
   height: 12rem;
+  border-radius: 3rem;
 }
 
 .search-form form {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  position: relative;
 }
 
-.search-form form .search-span {
+.search-form form span {
   position: relative;
   width: 100%;
+  margin-top: 2rem;
 }
 
-.search-form form .search-span .box {
+.search-form form span .box {
   width: 100%;
   padding: 1.4rem;
   border: var(--border);
@@ -649,10 +652,10 @@
   box-shadow: var(--box-shadow);
   font-size: 2rem;
   color: var(--black);
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
 }
 
-.search-form form .search-span .input-label {
+.search-form form span .input-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -663,14 +666,20 @@
   font-size: 1.8rem;
 }
 
-.search-form form .search-span .box:focus + .input-label {
+.search-form form span .box:focus + .input-label {
   transform: translate(0.5rem, -2.5rem);
 }
 
-.search-form form .btn {
+.search-form form .search_btn {
   display: inline-block;
   width: auto;
   margin-top: 0;
+  border: none;
+  height: 1.5rem;
+  border-radius: 0.6rem;
+  background: none;
+  position: absolute;
+  right: 10px;
 }
 
 .wishlist .box-container {
@@ -824,7 +833,7 @@
 
 .shopping-cart .box-container .box .qty {
   margin-top: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
   padding: 1.2rem 1.4rem;
   font-size: 1.8rem;
   color: var(--black);
