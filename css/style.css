@@ -250,7 +250,11 @@
   align-items: stretch;
 }
 
-.products .box-container .box {
+.products .box-container a {
+  display: grid;
+}
+
+.products .box-container a .box {
   display: grid;
   align-items: end;
   position: relative;
@@ -265,11 +269,11 @@
   z-index: 3;
 }
 
-.products .box-container .box:hover {
+.products .box-container a .box:hover {
   box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
-.products .box-container .box .img img {
+.products .box-container a .box .img img {
   width: 120%;
   height: 120%;
   object-fit: cover;
@@ -278,22 +282,22 @@
   filter: drop-shadow(-0.3rem, 0.6rem, 0.3rem rgba(110, 0, 0, 0.5));
 }
 
-.products .box-container .box .img img:hover {
+.products .box-container a .box .img img:hover {
   transform: rotate(20deg) scale(1.15);
   filter: drop-shadow(-0.7rem 0.6rem 0.7rem rgb(110, 0, 0));
 }
 
-.products .box-container .box .box-details .name {
+.products .box-container a .box .box-details .name {
   color: var(--black);
 }
 
-.products .box-container .box .box-details .details {
+.products .box-container a .box .box-details .details {
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
 }
 
-.products .box-container .box .price .price_num {
+.products .box-container a .box .price .price_num {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -305,13 +309,13 @@
   margin-bottom: 1rem;
 }
 
-.products .box-container .box .price .price_num span {
+.products .box-container a .box .price .price_num span {
   font-size: 2.5rem;
   color: var(--white);
   margin: 0 0.2rem;
 }
 
-.products .box-container .box .qty {
+.products .box-container a .box .qty {
   margin: 0.5rem 0;
   border-radius: 0.5rem;
   padding: 1.2rem 1.4rem;
