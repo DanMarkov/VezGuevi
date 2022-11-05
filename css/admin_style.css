@@ -39,10 +39,10 @@
 }
 
 .add-products form {
-  max-width: 50rem;
+  max-width: 64rem;
   margin: 0 auto;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
   background: radial-gradient(#fdfbfb, #ebedee);
   box-shadow: var(--box-shadow);
@@ -53,6 +53,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .add-products form .flex .inputBox {
@@ -70,9 +71,45 @@
   border: var(--border);
 }
 
-.add-products form textarea {
+.add-products form span textarea {
   height: 20rem;
   resize: none;
+}
+
+.flex .inputBox span, form span {
+  position: relative;
+}
+
+.flex .inputBox span .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1rem, -1.5rem);
+  transition: transform 0.25s;
+  transform-origin: left;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.add-products form span .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1rem, -19.5rem);
+  transition: transform 0.25s;
+  transform-origin: left;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.flex .inputBox span .box:focus + .input-label,
+.flex .inputBox span .box:valid + .input-label {
+  transform: translate(0.5rem, -6.5rem);
+}
+
+.add-products form span .box:focus + .input-label,
+.add-products form span .box:valid + .input-label {
+  transform: translate(0.5rem, -23.5rem);
 }
 
 .show-products {
@@ -82,12 +119,14 @@
 .show-products .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 33rem);
-  gap: 1.5rem;
-  align-items: flex-start;
+  gap: 2.5rem;
+  align-items: normal;
   justify-content: center;
 }
 
 .show-products .box-container .box {
+  display: grid;
+  align-items: end;
   position: relative;
   width: 33.5rem;
   padding: 2rem 3rem 3rem 3rem;
@@ -106,7 +145,6 @@
 
 .show-products .box-container .box img {
   width: 120%;
-  height: 120%;
   object-fit: cover;
   transition: 0.5s;
   transform: rotate(10deg);
@@ -152,7 +190,13 @@
   margin: 0 0.2rem;
 }
 
-.update-product form {
+.update-product .grid-form {
+  display: grid;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.update-product .grid-form form {
   padding: 3rem;
   margin: 5rem 0;
   text-align: center;
@@ -163,18 +207,24 @@
   transition: box-shadow 0.2s;
 }
 
-.update-product form:hover {
+.update-product .grid-form form:hover {
   box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
-.update-product form img {
+.update-product .grid-form form img {
   margin: -5rem 0 0 0;
   max-width: 100%;
   display: block;
   justify-self: center;
 }
 
-.update-product form .box {
+.update-product .grid-form form span {
+  position: relative;
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+.update-product .grid-form form .box {
   width: 100%;
   border: var(--border);
   background-color: var(--white);
@@ -184,6 +234,22 @@
   font-size: 1.8rem;
   color: var(--black);
   margin: 1rem 0;
+}
+
+.update-product .grid-form form span .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1rem, 1.5rem);
+  transition: transform 0.25s;
+  transform-origin: left;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.update-product .grid-form form span .box:focus + .input-label,
+.update-product .grid-form form .box:valid + .input-label {
+  transform: translate(0.5rem, -2.5rem);
 }
 
 .placed-orders .box-container {
@@ -310,6 +376,16 @@
 @media (max-width: 768px) {
   .add-products form .flex .inputBox {
     width: 100%;
+  }
+  .add-products form .box {
+    margin-bottom: 4.5rem;
+  }
+  form span .input-label {
+    transform: translate(1rem, -22.5rem);
+  }
+  form span .box:focus + .input-label,
+form span .box:valid + .input-label {
+    transform: translate(0.5rem, -27.5rem);
   }
 }
 @media (max-width: 450px) {

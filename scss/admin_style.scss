@@ -60,17 +60,17 @@
 }
 
 .add-products form{
-   max-width: 50rem;
+   max-width: 64rem;
    margin: 0 auto;
    margin-top: 2rem;
-   padding: 2rem;
+   padding: 4rem;
    text-align: center;
    // border:var(--border);
    background: radial-gradient(#fdfbfb, #ebedee);
    // background-color: var(--white);
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
-}
+}  
 
 // .add-products form{
 //    max-width: 70rem;
@@ -83,17 +83,18 @@
 //    border-radius: .5rem;
 // }
 
-.add-products form .flex{
+.add-products form .flex {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   margin-bottom: 1rem;
 }
 
-.add-products form .flex .inputBox{
+.add-products form .flex .inputBox {
    width: 49%;
 }
 
-.add-products form .box{
+.add-products form .box {
    width: 100%;
    margin:1rem 0;
    padding:1.2rem 1.4rem;
@@ -104,10 +105,44 @@
    border:var(--border);
 }
 
-.add-products form textarea{
+.add-products form span textarea {
    height: 20rem;
    resize: none;
 }
+
+.flex .inputBox span, form span {
+   position: relative;
+}
+
+.flex .inputBox span .input-label {
+   position: absolute;
+   top: 0; left: 0;
+   transform: translate(1rem, -1.5rem);
+   transition: transform .25s;
+   transform-origin: left;
+   padding: 1rem;
+   font-size: 1.8rem;
+ }
+
+ .add-products form span .input-label {
+   position: absolute;
+   top: 0; left: 0;
+   transform: translate(1rem, -19.5rem);
+   transition: transform .25s;
+   transform-origin: left;
+   padding: 1rem;
+   font-size: 1.8rem;
+ }
+ 
+ .flex .inputBox span .box:focus + .input-label, 
+ .flex .inputBox span .box:valid + .input-label {
+   transform: translate(.5rem, -6.5rem);
+ }
+ 
+ .add-products form span .box:focus + .input-label,
+ .add-products form span .box:valid + .input-label {
+   transform: translate(.5rem, -23.5rem);
+ }
 
 .show-products{
    padding-top: 0;
@@ -116,12 +151,14 @@
 .show-products .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
-   gap:1.5rem;
-   align-items: flex-start;
-   justify-content:center;
+   gap: 2.5rem;
+   align-items: normal;
+   justify-content: center;
 }
 
 .show-products .box-container .box{
+   display: grid;
+   align-items: end;
    position: relative;
    width: 33.5rem;
    padding: 2rem 3rem 3rem 3rem;
@@ -162,7 +199,7 @@
 
 .show-products .box-container .box img{
    width: 120%;
-   height: 120%;
+   // height: 120%;
    object-fit: cover;
    transition: 0.5s;
    transform: rotate(10deg);
@@ -239,9 +276,13 @@
 //    border-radius: .5rem;
 // }
 
+.update-product .grid-form {
+   display: grid;
+   max-width: 60rem;
+   margin: 0 auto;
+}
 
-
-.update-product form{
+.update-product .grid-form form{
    // max-width: 50rem;
    padding: 3rem;
    // padding:2rem;
@@ -258,7 +299,7 @@
    transition: box-shadow .2s;
 }
 
-.update-product form:hover {
+.update-product .grid-form form:hover {
    @include hover-shadow;
 }
 
@@ -273,7 +314,7 @@
 //    border-radius: .5rem;
 // }
 
-.update-product form img{
+.update-product .grid-form form img{
    // height: 25rem;
    // object-fit: cover;
    margin: -5rem 0 0 0;
@@ -289,17 +330,53 @@
 //    margin-bottom: 1rem;
 // }
 
-.update-product form .box{
+.update-product .grid-form form span {
+   position: relative;
+   display: inline-block;
+   margin-top: 3rem;
+}
+
+.update-product .grid-form form .box{
    width: 100%;
-   border:var(--border);
+   border: var(--border);
    background-color: var(--white);
    border-radius: .5rem;
    background-color: var(--light-bg);
-   padding:1.2rem 1.4rem;
+   padding: 1.2rem 1.4rem;
    font-size: 1.8rem;
-   color:var(--black);
-   margin:1rem 0;
+   color: var(--black);
+   margin: 1rem 0;
 }
+
+.update-product .grid-form form span .input-label {
+   position: absolute;
+   top: 0; left: 0;
+   transform: translate(1rem, 1.5rem);
+   transition: transform .25s;
+   transform-origin: left;
+   padding: 1rem;
+   font-size: 1.8rem;
+ }
+
+//  form span .input-label {
+//    position: absolute;
+//    top: 0; left: 0;
+//    transform: translate(1rem, -19.5rem);
+//    transition: transform .25s;
+//    transform-origin: left;
+//    padding: 1rem;
+//    font-size: 1.8rem;
+//  }
+ 
+ .update-product .grid-form form span .box:focus + .input-label, 
+ .update-product .grid-form form .box:valid + .input-label {
+   transform: translate(.5rem, -2.5rem);
+ }
+ 
+//  form span .box:focus + .input-label,
+//  form span .box:valid + .input-label {
+//    transform: translate(.5rem, -23.5rem);
+//  }
 
 .placed-orders .box-container{
    display: grid;
@@ -462,6 +539,19 @@
    .add-products form .flex .inputBox{
       width: 100%;
    }
+   
+   .add-products form .box {
+      margin-bottom: 4.5rem;
+   } 
+
+   form span .input-label {
+      transform: translate(1rem, -22.5rem);
+   }
+
+   form span .box:focus + .input-label, 
+   form span .box:valid + .input-label {
+      transform: translate(0.5rem, -27.5rem);
+   }
 
 }
 
@@ -473,6 +563,7 @@
       height: auto;
       width: 100%;
    }
+
 
    .placed-orders .box-container{
       grid-template-columns: 1fr;

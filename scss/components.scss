@@ -389,11 +389,15 @@ li {
   padding-top: 4.5rem;
 }
 
-.form-container form .box {
+.form-container form span {
+  position: relative;
+}
+
+.form-container form span .box {
   width: 100%;
   // width: 80%;
   // margin: 1rem 0;
-  margin-top: 2rem;
+  margin-top: 4.5rem;
   // border-radius: 0.5rem;
   border-radius: 3rem;
   // border: var(--border);
@@ -405,9 +409,23 @@ li {
   background: transparent;
 }
 
-.form-container form .box::placeholder {
+
+
+.form-container form span .input-label {
+  position: absolute;
+  top: 0; left: 0;
+  transform: translate(1rem, -1.5rem);
+  transition: transform .25s;
+  transform-origin: left;
   padding: 1rem;
+  font-size: 1.8rem;
 }
+
+.form-container form span .box:focus + .input-label, 
+.form-container form span .box:valid + .input-label {
+  transform: translate(.5rem, -6.5rem);
+}
+
 
 // .form-container form .btn-login {
 //   width: 80%;

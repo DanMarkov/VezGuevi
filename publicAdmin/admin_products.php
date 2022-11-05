@@ -84,14 +84,47 @@ require_once "$path/private/head.php";
    <form action="" method="POST" enctype="multipart/form-data">
       <div class="flex">
          <div class="inputBox">
-         <input type="text" name="name" class="box" required placeholder="enter product name">
-         <select name="category" class="box" required>
-            <option value="" selected disabled>select category</option>
+            <span>
+                <input type="text" name="name" id="name" class="box" required>
+                <label for="name" class="input-label">enter product name</label>
+            </span>
+           
+            <select name="category" class="box" required>
+               <option value="" selected disabled>select category</option>
                <option value="tops">tops</option>
                <option value="bottoms">bottoms</option>
                <option value="womens">womens</option>
                <option value="accessories">accessories</option>
-         </select>
+            </select>
+         </div>
+         <div class="inputBox">
+            <span>
+               <input type="number" min="0" name="price" class="box" id="price" required>
+               <label for="price" class="input-label">enter product price</label>
+            </span>
+            <span>
+                <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png, image/gif">
+            </span>
+         </div>
+      </div>
+      <span>
+         <textarea name="details" class="box" id="details" required cols="30" rows="10"></textarea>
+         <label for="details" class="input-label">enter product details</label>
+      </span>
+      <span class="btn"><input type="submit" class="submit" value="add product" name="add_product"></span>
+   </form>
+
+   <!-- <form action="" method="POST" enctype="multipart/form-data">
+      <div class="flex">
+         <div class="inputBox">
+            <input type="text" name="name" class="box" required placeholder="enter product name">
+            <select name="category" class="box" required>
+               <option value="" selected disabled>select category</option>
+               <option value="tops">tops</option>
+               <option value="bottoms">bottoms</option>
+               <option value="womens">womens</option>
+               <option value="accessories">accessories</option>
+            </select>
          </div>
          <div class="inputBox">
          <input type="number" min="0" name="price" class="box" required placeholder="enter product price">
@@ -100,7 +133,7 @@ require_once "$path/private/head.php";
       </div>
       <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
       <span class="btn"><input type="submit" class="submit" value="add product" name="add_product"></span>
-   </form>
+   </form> -->
 
 </section>
 

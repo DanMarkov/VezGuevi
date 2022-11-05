@@ -66,14 +66,50 @@ require_once "$path/private/head.php";
 
    <h1 class="title">update product</h1>   
 
-   <?php
+   <div class="grid-form">
+      <?php
       $update_id = $_GET['update'];
       $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
       $select_products->execute([$update_id]);
       if($select_products->rowCount() > 0){
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
-   ?>
+      ?>
    <form action="" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
+      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+      <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt=""> 
+      <span>
+         <input type="text" name="name" id="name" required class="box" value="<?= $fetch_products['name']; ?>">
+         <label for="name" class="input-label">enter product name</label>
+      </span>
+      <span>
+         <input type="number" name="price" id="price" min="0" required class="box" value="<?= $fetch_products['price']; ?>">
+         <label for="price" class="input-label">enter product price</label>
+      </span>
+      
+      <select name="category" class="box" required>
+         <option selected><?= $fetch_products['category']; ?></option>
+         <option value="tops">tops</option>
+         <option value="bottoms">bottoms</option>
+            <option value="womens">womens</option>
+            <option value="accessories">accessories</option>
+         </select>
+         <span>
+            <textarea name="details" id="details" required class="box" cols="30" rows="10"><?= $fetch_products['details']; ?></textarea>
+            <label for="details" class="input-label">enter product details</label>
+         </span>
+         <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/gif">
+         <div class="flex-btn">
+            <span class="btn"><input type="submit" class="submit" value="update product" name="update_product"></span>
+            <a href="admin_products.php" class="option-btn">go back</a>
+         </div>
+      </form>
+   </div>
+
+
+   
+
+   <!-- <form action="" method="post" enctype="multipart/form-data">
       <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
       <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
@@ -92,7 +128,7 @@ require_once "$path/private/head.php";
          <span class="btn"><input type="submit" class="submit" value="update product" name="update_product"></span>
          <a href="admin_products.php" class="option-btn">go back</a>
       </div>
-   </form>
+   </form> -->
    <?php
          }
       }else{

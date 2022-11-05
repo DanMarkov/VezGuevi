@@ -187,10 +187,12 @@
   grid-template-columns: repeat(auto-fit, 27rem);
   gap: 1.5rem;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .home-category .box-container .box {
+  display: grid;
+  align-items: end;
   padding: 2rem;
   text-align: center;
   border: var(--border);
@@ -245,10 +247,12 @@
   grid-template-columns: repeat(auto-fit, 35rem);
   gap: 1.5rem;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .products .box-container .box {
+  display: grid;
+  align-items: end;
   position: relative;
   width: 33.5rem;
   padding: 2rem 3rem 3rem 3rem;
@@ -627,7 +631,12 @@
   align-items: center;
 }
 
-.search-form form .box {
+.search-form form .search-span {
+  position: relative;
+  width: 100%;
+}
+
+.search-form form .search-span .box {
   width: 100%;
   padding: 1.4rem;
   border: var(--border);
@@ -637,6 +646,21 @@
   font-size: 2rem;
   color: var(--black);
   border-radius: 0.5rem;
+}
+
+.search-form form .search-span .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1rem, 1.5rem);
+  transition: transform 0.25s;
+  transform-origin: left;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.search-form form .search-span .box:focus + .input-label {
+  transform: translate(0.5rem, -2.5rem);
 }
 
 .search-form form .btn {

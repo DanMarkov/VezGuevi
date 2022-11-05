@@ -25,6 +25,31 @@ if(isset($message)){
 
    <form action="" enctype="multipart/form-data" id="form" method="POST">
       <h3>Sign Up Now!</h3>
+      <span>
+         <input type="text" name="name" class="box" id="login" required>
+         <label for="login" class="input-label">enter your name</label>
+      </span>
+      <span>
+         <input type="email" name="email" id="email" class="box" required  pattern="^([a-zA-Z0-9_\-\.]+)@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$">
+         <label for="email" class="input-label">enter your email</label>
+      </span>
+      <span>
+         <input type="password" name="pass" class="box" id="password" required>
+         <label for="password" class="input-label">enter your password</label>
+      </span>
+      <span>
+          <input type="password" name="cpass" class="box" id="password2" required>
+         <label for="password2" class="input-label">confirm your password</label>
+      </span>
+      <span>
+          <input type="file" name="image" class="box" required accept="image/jpg, image/jpeg, image/png, image/gif">
+      </span>
+      <span class="btn-login invalid" id="submit"><input type="submit" value="Sign Up Now" class="submit" name="submit"></span>
+      <p>already have an account? <a href="login">login now</a></p>
+   </form>
+
+   <!-- <form action="" enctype="multipart/form-data" id="form" method="POST">
+      <h3>Sign Up Now!</h3>
       <input type="text" name="name" class="box" id="login"  placeholder="enter your name" required>
       <input type="email" name="email" class="box" placeholder="enter your email" required  pattern="^([a-zA-Z0-9_\-\.]+)@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$">
       <input type="password" name="pass" class="box" id="password" placeholder="enter your password" required>
@@ -32,7 +57,7 @@ if(isset($message)){
       <input type="file" name="image" class="box" required accept="image/jpg, image/jpeg, image/png, image/gif">
       <span class="btn-login invalid" id="submit"><input type="submit" value="Sign Up Now" class="submit" name="submit"></span>
       <p>already have an account? <a href="login">login now</a></p>
-   </form>
+   </form> -->
 
 </section>
 

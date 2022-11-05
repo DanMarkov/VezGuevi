@@ -335,9 +335,13 @@ li {
   padding-top: 4.5rem;
 }
 
-.form-container form .box {
+.form-container form span {
+  position: relative;
+}
+
+.form-container form span .box {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4.5rem;
   border-radius: 3rem;
   border: 0.2rem solid #f4f6f9;
   padding: 1.2rem 1.4rem;
@@ -346,8 +350,20 @@ li {
   background: transparent;
 }
 
-.form-container form .box::placeholder {
+.form-container form span .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1rem, -1.5rem);
+  transition: transform 0.25s;
+  transform-origin: left;
   padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.form-container form span .box:focus + .input-label,
+.form-container form span .box:valid + .input-label {
+  transform: translate(0.5rem, -6.5rem);
 }
 
 .form-container form p {

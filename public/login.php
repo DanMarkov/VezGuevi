@@ -27,8 +27,15 @@ if(isset($message)){
 
    <form action="" method="POST" id="form">
       <h3>login now</h3>
-      <input type="email" name="email" class="box" placeholder="enter your email" required>
-      <input type="password" name="pass" class="box" placeholder="enter your password" required>
+      <span>
+         <input type="email" name="email" class="box" id="email" required>
+         <label for="email" class="input-label">enter your email</label>
+      </span>
+      <span>
+         <input type="password" name="pass" class="box" id="password" required>
+         <label for="password" class="input-label">enter your password</label>
+      </span> 
+     
       <span class="btn-login invalid" id="submit"><input type="submit" value="Login Now" class="submit" name="submit" ></span>
       <p>don't have an account? <a href="/signup">sign up now!</a></p>
    </form>
