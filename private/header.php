@@ -76,6 +76,7 @@ if(isset($message)){
                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
             ?>
             <img src="../uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
+           
             <p><?= $fetch_profile['name']; ?></p>
          </div>
          <hr>

@@ -481,6 +481,7 @@ li {
   padding: 5px;
   top: 17px;
   width: 30.7px;
+  user-select: none;
 }
 
 #menu-btn {
@@ -518,7 +519,7 @@ li {
   justify-content: center;
 }
 
-.header .flex .profile img {
+.header .flex .profile .profile-detail img {
   height: 8rem;
   width: 8rem;
   margin-bottom: 1rem;
@@ -526,7 +527,7 @@ li {
   object-fit: cover;
 }
 
-.header .flex .profile p {
+.header .flex .profile .profile-detail p {
   padding: 0.5rem 3rem;
   font-size: 3rem;
   color: var(--light-color);
