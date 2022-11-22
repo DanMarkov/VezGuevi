@@ -488,6 +488,10 @@ li {
   display: none;
 }
 
+#close-btn {
+  display: none;
+}
+
 .header .flex .profile {
   position: absolute;
   top: 120%;
@@ -664,6 +668,13 @@ hr {
   #user-btn {
     display: inline-block;
   }
+  #close-btn {
+    display: grid;
+    display: grid;
+    position: absolute;
+    top: 24px;
+    left: 432px;
+  }
   .header .flex .icons .search-icon {
     display: grid;
   }
@@ -675,19 +686,45 @@ hr {
     border-bottom: var(--border);
     background-color: var(--white);
     position: absolute;
-    top: 99%;
+    top: 0;
     left: 0;
     right: 0;
     transition: 0.2s linear;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    border-radius: 3rem;
+    height: 100vh;
+    width: 76vw;
+    display: none;
+    z-index: 1;
+  }
+  .header .flex .navbar .grid-for-svg {
+    display: grid;
+    justify-items: end;
+    position: relative;
   }
   .header .flex .navbar.active {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: repeat(4, min-content);
+    text-align: center;
+    grid-template-areas: ". home ." ". shop ." ". orders ." ". search .";
   }
   .header .flex .navbar a {
     display: block;
     margin: 2rem;
+    font-size: 3rem;
+  }
+  .header .flex .navbar .navbar-home {
+    grid-area: home;
+  }
+  .header .flex .navbar .navbar-shop {
+    grid-area: shop;
+  }
+  .header .flex .navbar .navbar-orders {
+    grid-area: orders;
+  }
+  .header .flex .navbar .navbar-search {
+    grid-area: search;
   }
   .update-profile form .flex {
     flex-wrap: wrap;
@@ -706,9 +743,17 @@ hr {
     width: 26.7px;
   }
 }
+@media (max-width: 568px) {
+  #close-btn {
+    left: 281px;
+  }
+}
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+  #close-btn {
+    left: 296px;
   }
   .flex-btn {
     flex-flow: column;
@@ -719,6 +764,11 @@ hr {
   }
   .year {
     padding: 2rem 15vh;
+  }
+}
+@media (max-width: 394px) {
+  #close-btn {
+    left: 254px;
   }
 }
 @keyframes animated_text {

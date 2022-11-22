@@ -25,10 +25,16 @@ if(isset($message)){
       <a href="/home" class="logo"><img src="../images/VH.gif" alt="logo"></a>
 
       <nav class="navbar">
-         <a href="home">home</a>
-         <a href="shop">shop</a>
-         <a href="orders">orders</a>
-         <a href="search">search!</a>
+         <div class="grid-for-svg">
+            <svg class="theme-icon" id="close-btn" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M46 2L2 46" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+               <path d="M46 46L2 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+         </div>
+         <a class="navbar-home" href="home">home</a>
+         <a class="navbar-shop" href="shop">shop</a>
+         <a class="navbar-orders" href="orders">orders</a>
+         <a class="navbar-search" href="search">search!</a>
          <!-- <a id="user-navbar">account</a> -->
          <!-- <a href="about">about</a>
          <a href="contact">contact</a> -->
