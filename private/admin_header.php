@@ -41,10 +41,10 @@ if(isset($message)){
                <path d="M46 46L2 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
          </div>
-         <a href="../publicAdmin/admin_page.php">home</a>
-         <a href="../publicAdmin/admin_products.php">products</a>
-         <a href="../publicAdmin/admin_orders.php">orders</a>
-         <a href="../publicAdmin/admin_users.php">users</a>
+         <a class="navbar-home" href="../publicAdmin/admin_page.php">home</a>
+         <a class="navbar-shop" href="../publicAdmin/admin_products.php">products</a>
+         <a class="navbar-orders" href="../publicAdmin/admin_orders.php">orders</a>
+         <a class="navbar-search" href="../publicAdmin/admin_users.php">users</a>
          <!-- <a id="user-navbar">account</a> -->
          <!-- <a href="../publicAdmin/admin_contacts.php">messages</a> -->
       </nav>
