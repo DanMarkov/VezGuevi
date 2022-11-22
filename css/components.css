@@ -98,6 +98,17 @@ body {
   /* padding-bottom: 6.5rem; */
 }
 
+body.blur .navbar:after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  backdrop-filter: blur(10rem);
+}
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -672,8 +683,8 @@ hr {
     display: grid;
     display: grid;
     position: absolute;
+    right: 24px;
     top: 24px;
-    left: 432px;
   }
   .header .flex .icons .search-icon {
     display: grid;
@@ -684,14 +695,13 @@ hr {
   .header .flex .navbar {
     border-top: var(--border);
     border-bottom: var(--border);
-    background-color: var(--white);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     transition: 0.2s linear;
     height: 100vh;
-    width: 76vw;
+    width: 100vw;
     display: none;
     z-index: 1;
   }
@@ -707,12 +717,15 @@ hr {
     grid-template-columns: 1fr min-content 1fr;
     grid-template-rows: repeat(4, min-content);
     text-align: center;
-    grid-template-areas: ". home ." ". shop ." ". orders ." ". search .";
+    grid-template-areas: ". home svg" ". shop ." ". orders ." ". search .";
   }
   .header .flex .navbar a {
     display: block;
     margin: 2rem;
     font-size: 3rem;
+  }
+  .header .flex .navbar .grid-for-svg {
+    grid-area: svg;
   }
   .header .flex .navbar .navbar-home {
     grid-area: home;
@@ -743,17 +756,9 @@ hr {
     width: 26.7px;
   }
 }
-@media (max-width: 568px) {
-  #close-btn {
-    left: 281px;
-  }
-}
 @media (max-width: 450px) {
   html {
     font-size: 50%;
-  }
-  #close-btn {
-    left: 296px;
   }
   .flex-btn {
     flex-flow: column;
@@ -762,13 +767,11 @@ hr {
   .title {
     font-size: 3rem;
   }
+  .header .flex .navbar {
+    width: 100vw;
+  }
   .year {
     padding: 2rem 15vh;
-  }
-}
-@media (max-width: 394px) {
-  #close-btn {
-    left: 254px;
   }
 }
 @keyframes animated_text {

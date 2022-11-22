@@ -35,6 +35,12 @@ if(isset($message)){
       <a href="../publicAdmin/admin_page.php" class="logo">Admin<span>Panel</span></a>
 
       <nav class="navbar">
+      <div class="grid-for-svg">
+            <svg class="theme-icon" id="close-btn" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M46 2L2 46" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+               <path d="M46 46L2 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+         </div>
          <a href="../publicAdmin/admin_page.php">home</a>
          <a href="../publicAdmin/admin_products.php">products</a>
          <a href="../publicAdmin/admin_orders.php">orders</a>
