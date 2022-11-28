@@ -467,6 +467,58 @@ li {
   display: none;
 }
 
+.header .flex .icons .side-cart,
+.header .flex .icons .cart {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.header .flex .icons .side-cart a,
+.header .flex .icons .cart a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.header .flex .icons .side-cart a:hover,
+.header .flex .icons .cart a:hover {
+  color: #f1f1f1;
+}
+
+.header .flex .icons .side-cart .closebtn,
+.header .flex .icons .cart .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .side-cart {
+    padding-top: 15px;
+  }
+  .side-cart a {
+    font-size: 18px;
+  }
+  .cart {
+    padding-top: 15px;
+  }
+  .cart a {
+    font-size: 18px;
+  }
+}
 .header .flex .icons .cart {
   display: grid;
   grid-auto-flow: column;
@@ -479,11 +531,12 @@ li {
 }
 
 .header .flex .icons a span,
-.header .flex .icons a i {
+.header .flex .icons a i,
+.header .flex .icons .cart span {
   color: var(--white);
 }
 
-.header .flex .icons a span {
+.header .flex .icons .cart span {
   font-size: 1.5rem;
   background: black;
   left: 17px;
@@ -669,7 +722,7 @@ hr {
   .year {
     padding: 2rem 32vh;
   }
-  .header .flex .icons a span {
+  .header .flex .icons .cart span {
     width: 28.7px;
   }
 }
@@ -753,7 +806,7 @@ hr {
   .update-profile form {
     flex-flow: column;
   }
-  .header .flex .icons a span {
+  .header .flex .icons .cart span {
     width: 26.7px;
   }
 }
