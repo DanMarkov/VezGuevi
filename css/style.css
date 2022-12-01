@@ -780,55 +780,129 @@
 }
 
 .shopping-cart .box-container {
-  width: 85%;
-  max-width: 65rem;
   margin: 0 auto;
-}
-
-.shopping-cart .box-container .box {
-  display: grid;
-  padding: 3rem;
+  margin: auto;
   text-align: center;
-  background: radial-gradient(#fdfbfb, #ebedee);
-  box-shadow: var(--box-shadow);
-  border-radius: 1rem;
-  position: relative;
-  margin: 5rem 0;
-  transition: box-shadow 0.2s;
 }
 
-.shopping-cart .box-container .box:hover {
+.shopping-cart .box-container .wrapper {
+  padding-block: 4rem;
+  display: grid;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.shopping-cart .box-container .wrapper:focus {
+  outline: 0;
+}
+
+.shopping-cart .box-container .wrapper .box {
+  position: relative;
+  display: inline-block;
+  width: 32rem;
+  background: var(--shopping-cart-card);
+  border-radius: 2rem;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.shopping-cart .box-container .wrapper .box .product {
+  display: grid;
+  position: relative;
+}
+
+.shopping-cart .box-container .wrapper .box:hover {
   box-shadow: -0.5rem 0.5rem #ff51c5, -1.5rem 1.5rem 2rem -1rem #ff51c5, 0.5rem -0.5rem #00f6ff, 0.5rem -0.5rem 2rem #00f6ff;
 }
 
-.shopping-cart .box-container .box img {
-  max-width: 100%;
-  display: block;
-  margin: -5rem 0 0 0;
-  justify-self: center;
+.shopping-cart .box-container .wrapper .box .product::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shopping-cart-card-before);
+  transform: skewY(345deg);
+  transition: 0.5s;
 }
 
-.shopping-cart .box-container .box .name {
-  font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
-  line-height: 1;
-  color: var(--white);
-  text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.2);
+.shopping-cart .box-container .wrapper .box .product:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
 }
 
-.shopping-cart .box-container .box .price {
-  padding: 1rem 0;
-  color: var(--red);
-  font-size: 2.5rem;
+.shopping-cart .box-container .wrapper .box .product::after {
+  content: "V E Z H U E V I";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 8em;
+  color: rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
 }
 
-.shopping-cart .box-container .box .price span {
-  font-size: 2.5rem;
-  color: var(--white);
-  margin: 0 0.2rem;
+.shopping-cart .box-container .wrapper .box .product:hover::after {
+  left: -10rem;
 }
 
-.shopping-cart .box-container .box a {
+.shopping-cart .box-container .wrapper .box .product a {
   justify-self: end;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.shopping-cart .box-container .wrapper .box .product .image-background {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  z-index: 1;
+}
+
+.shopping-cart .box-container .wrapper .box .product .image-background img {
+  max-width: 100%;
+  transition: 0.5s;
+  padding-right: 1rem;
+  transform: rotate(10deg);
+}
+
+.shopping-cart .box-container .wrapper .box .product:hover .image-background img {
+  max-width: 80%;
+}
+
+.shopping-cart .box-container .wrapper .box .product .content-background {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.shopping-cart .box-container .wrapper .box .product .content-background .name {
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.shopping-cart .box-container .wrapper .box .product .content-background .sub-total {
+  font-size: 2.4rem;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+.shopping-cart .box-container .wrapper .box .product .content-background .sub-total span {
+  color: var(--red);
 }
 
 .shopping-cart .box-container .box .qty {
@@ -839,16 +913,6 @@
   color: var(--black);
   border: var(--border);
   width: 100%;
-}
-
-.shopping-cart .box-container .sub-total {
-  margin-top: 2rem;
-  font-size: 2rem;
-  color: var(--light-color);
-}
-
-.shopping-cart .box-container .sub-total span {
-  color: var(--red);
 }
 
 .shopping-cart .cart-total {

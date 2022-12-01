@@ -21,6 +21,8 @@
   --product-bg: #E70C7A;
   --search-btn-bg: #c9d6ed;
   --btn-hover: #f1f1f1;
+  --shopping-cart-card: #122936;
+  --shopping-cart-card-before: #cee945;
 }
 
 *,
@@ -493,19 +495,6 @@ li {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 6rem;
-}
-
-.header .flex .icons .side-cart a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: var(--green);
-  display: block;
-  transition: 0.3s;
-}
-
-.header .flex .icons .side-cart a:hover {
-  color: var(--btn-hover);
 }
 
 .header .flex .icons .side-cart .closebtn {
