@@ -104,7 +104,7 @@ require_once "$path/private/head.php";
 
 </div>
 
-<section class="home-category">
+<!-- <section class="home-category">
 
    <h1 class="title">Category</h1>
 
@@ -143,9 +143,37 @@ require_once "$path/private/head.php";
 
    </div>
 
-</section>
+</section> -->
 
-<section class="products">
+ 
+<section class="cont">
+   <div class="slider">
+      <div class="img">
+         <img src="../images/slider1.jpg" alt="" width="1100" id="imgSlider">
+      </div>
+   </div>
+   <div class="btn-layout">
+      <div  id="btnPre"  class="slider-btn">Previous</div>
+      <div  id="btnNext" class="slider-btn">Next</div>
+   </div>
+</section>  
+
+<!-- <section class="cont">
+   <div class="slider">
+      <div id="sliderLine">
+         <img src="../images/slider1.jpg" alt="">
+         <img src="../images/slider2.jpg" alt="">
+         <img src="../images/slider3.jpg" alt="">
+         <img src="../images/slider4.jpg" alt="">
+         <img src="../images/slider5.jpg" alt="">
+         <img src="../images/slider6.jpg" alt="">
+      </div>
+   </div>
+   <div id="btnPre">Пред.</div>
+   <div id="btnNext">След.</div>
+</section> -->
+
+<section class="products"> 
 
    <h1 class="title">Последние товары</h1>
 
@@ -231,8 +259,81 @@ require_once "$path/private/head.php";
    let video = document.getElementById('video');
    let number = Math.floor(Math.random() * 10) + 1;
    video.src += number + '.mp4';
-
 </script>
+
+ <script>
+   let arrIMG = [
+      "slider1.jpg",
+      "slider2.jpg",
+      "slider3.jpg",
+      "slider4.jpg",
+      "slider5.jpg",
+      "slider6.jpg"
+   ];
+
+   let countIMG = arrIMG.length;
+   let selectIMG = 0;
+   console.log(countIMG);
+
+   btnNext.addEventListener("click", ()=> {
+      // if(selectIMG>6){
+      //    selectIMG = 0;
+      // } else {
+      //    selectIMG++;
+      // }
+         selectIMG > countIMG - 2 ? selectIMG = 0 : selectIMG++;
+      imgSlider.setAttribute("src", `../images/${arrIMG[selectIMG]}`);
+   });
+
+   btnPre.addEventListener("click", ()=> {
+      // if(selectIMG>6){
+      //    selectIMG = 0;
+      // } else {
+      //    selectIMG++;
+      // }
+
+      selectIMG <= 0 ? selectIMG = countIMG - 1 : selectIMG--;
+
+      // if(selectIMG<=0) selectIMG = countIMG-1;
+      // else selectIMG--;
+      imgSlider.setAttribute("src", `../images/${arrIMG[selectIMG]}`);
+   });
+
+ </script> 
+
+ <!-- <script>
+   // onclick = () => {
+      let myElem = document.querySelector("img");
+      let IMGWithValue = window.getComputedStyle(myElem).width
+      // 1 способ 
+      // console.log(IMGWithValue.match(/\d+/)[0]);
+        
+      // 2 способ
+      // console.log(number(IMGWithValue.match(/[0-9]+/)));
+      
+      // 3 способ
+      // parseInt - поиск строки в строке!
+      console.log(parseInt(IMGWithValue));
+      IMGWithValue = parseInt(IMGWithValue);
+   // }
+
+   let position = 0;
+   let stepPosition = IMGWithValue;
+   let imgCount = sliderLine.childElement;
+   let minPosition = -stepPosition * (imgCount - 1);
+   console.log(imgCount);
+   btnNext.onclick = () => {
+      if(position <= minPosition) position = 0;
+      else position = position - stepPosition;
+      sliderLine.style.left = `${position}rem`
+   }
+   
+   btnPre.onclick = () => {
+      position = position + stepPosition;
+      sliderLine.style.left = `${position}rem`
+   }
+
+ </script> -->
 
 <script src="../js/script.js"></script>
 

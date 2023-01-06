@@ -242,6 +242,67 @@
   padding-bottom: 0;
 }
 
+.cont {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cont .btn-layout {
+  text-align: center;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cont .btn-layout .slider-btn {
+  display: grid;
+  padding: 1rem 1rem;
+  border-radius: 10rem;
+  background-color: blueviolet;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  user-select: none;
+  min-width: 8rem;
+}
+
+.cont .btn-layout .slider-btn:hover {
+  color: black;
+}
+
+.slider-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(147, 159, 31);
+  z-index: -1;
+  border-radius: 10rem;
+  transition: 0.3s ease all;
+  transform: scale(0, 1);
+  transform-origin: top right;
+  transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.slider-btn:hover::after {
+  transform: scale(1, 1);
+  transform-origin: top left;
+}
+
 .products .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 35rem);
@@ -1060,6 +1121,11 @@
 @media (max-width: 1496px) {
   .home .content h3 {
     left: 0;
+  }
+}
+@media (max-width: 1119px) {
+  .cont {
+    display: none;
   }
 }
 @media (max-width: 768px) {
