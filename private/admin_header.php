@@ -32,7 +32,7 @@ if(isset($message)){
 
    <div class="flex">
 
-      <a href="../publicAdmin/admin_page.php" class="logo">Admin<span>Panel</span></a>
+      <a href="../publicAdmin/admin_page.php" class="logo"><img src="../images/admin_logo.png" alt="logo"></a>
 
       <nav class="navbar">
          <div class="grid-for-svg">
