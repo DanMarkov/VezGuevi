@@ -22,7 +22,7 @@ if(isset($_POST['order'])){
    $number = clearValue($_POST['number']);
    $email = clearValue($_POST['email']);
    $method = clearValue($_POST['method']);
-   $address = 'flat no. '. $_POST['flat'] .' '. $_POST['street'] .' '. $_POST['city'] .' '. $_POST['state'] .' '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address = 'Address: '. $_POST['address'] .' '. $_POST['city'] .' '. $_POST['state'] .' '. $_POST['country'] .' - '. $_POST['zip_code'];
    $address = clearValue($address);
    $placed_on = date('d-M-Y');
 
@@ -83,66 +83,87 @@ require_once "$path/private/head.php";
       echo '<p class="empty">your cart is empty!</p>';
    }
    ?>
-   <div class="grand-total">grand total: <span>$<?= $cart_grand_total; ?></span></div>
+   <p>Total: <span>$<?= $cart_grand_total; ?></span></p>
 </section>
 
 <section class="checkout-orders">
 
    <form action="" method="POST">
 
-      <h3>place your order</h3>
+      <!-- <h3>place your order</h3> -->
 
       <div class="flex">
-         <div class="inputBox">
-            <span>your name :</span>
-            <input type="text" name="name" placeholder="enter your name" class="box" required>
+         <div class="left">
+            <h3>BILLING ADDRESS</h3>
+            <div class="inputBox">
+               <span>Full Name</span>
+               <input type="text" name="name" placeholder="enter your name" class="box" required>
+            </div>
+
+            <div class="inputBox">
+               <span>Your Email</span>
+               <input type="email" name="email" placeholder="enter your email" class="box" required>
+            </div>
+
+            <div class="inputBox">
+               <span>Your Address</span>
+               <input type="text" name="address" placeholder="enter your address" class="box" required>
+            </div>
+
+            <div class="inputBox">
+               <span>Your Country</span>
+               <select name="country" class="box" id="country" required>
+                  <option value="0">Countries</option>
+               </select>
+               <!-- <input type="text" name="country" placeholder="enter your country" class="box" required> -->
+            </div>
+
+            <div class="inputBox">
+               <span>State</span>
+               <select name="state" class="box" id="state" required>
+                  <option value="0">States</option>
+               </select>
+               <!-- <input type="text" name="state" placeholder="enter your state" class="box" required> -->
+            </div>
+
+            <div class="inputBox">
+               <span>City</span>
+               <select name="city" class="box" id="city" required>
+                  <option value="0">Cities</option>
+               </select>
+              <!-- <input type="text" name="city" placeholder="enter your city" class="box" required> -->
+            </div>
+
+            <div class="country">
+               <div class="inputBox">
+                  <span>ZIP Code</span>
+                  <input type="number" min="0" name="zip_code" placeholder="enter your zip code" class="box" required>
+               </div>
+            </div>
          </div>
-         <div class="inputBox">
-            <span>your number :</span>
-            <input type="number" name="number" placeholder="enter your number" class="box" required>
+         <div class="right">
+            <h3>PAYMENT</h3>
+            <div class="inputBox">
+               <span>Your Card Number or Cryptocurrency Address</span>
+               <input type="number" name="number" placeholder="enter your card number" class="box" required>
+            </div>
+
+            <div class="inputBox">
+               <span>Payment Method</span>
+               <select name="method" class="box" id="method" required>
+                  <option value="0">Payment Methods</option>
+               </select>
+            </div>
+
+
+
+            <span class="btn"><input type="submit" name="order" class="submit" <?= ($cart_grand_total > 1)?'':'disabled'; ?>" value="place order"></span>
          </div>
-         <div class="inputBox">
-            <span>your email :</span>
-            <input type="email" name="email" placeholder="enter your email" class="box" required>
-         </div>
-         <div class="inputBox">
-            <span>payment method :</span>
-            <select name="method" class="box" required>
-               <option value="credit card">Debit card</option>
-               <option value="paypal">Paypal</option>
-               <option value="bitcoin">Bitcoin</option>
-               <option value="ethereum">Ethereum</option>
-               <option value="monero">Monero</option>
-               <option value="wownero">Wownero</option>
-            </select>
-         </div>
-         <div class="inputBox">
-            <span>address line 01 :</span>
-            <input type="text" name="flat" placeholder="e.g. flat number" class="box" required>
-         </div>
-         <div class="inputBox">
+         <!-- <div class="inputBox">
             <span>address line 02 :</span>
             <input type="text" name="street" placeholder="e.g. street name" class="box" required>
-         </div>
-         <div class="inputBox">
-            <span>city :</span>
-            <input type="text" name="city" placeholder="e.g. mumbai" class="box" required>
-         </div>
-         <div class="inputBox">
-            <span>state :</span>
-            <input type="text" name="state" placeholder="e.g. maharashtra" class="box" required>
-         </div>
-         <div class="inputBox">
-            <span>country :</span>
-            <input type="text" name="country" placeholder="e.g. India" class="box" required>
-         </div>
-         <div class="inputBox">
-            <span>pin code :</span>
-            <input type="number" min="0" name="pin_code" placeholder="e.g. 123456" class="box" required>
-         </div>
+         </div> -->
       </div>
-
-      <span class="btn"><input type="submit" name="order" class="submit" <?= ($cart_grand_total > 1)?'':'disabled'; ?>" value="place order"></span>
 
    </form>
 
@@ -158,6 +179,72 @@ require_once "$path/private/head.php";
 <? require_once "$path/private/footer.php"; ?>
 
 <script src="../js/script.js"></script>
+<script>
+   function addOption(parent, content, value) {
+      const newOption = document.createElement("option");
+      newOption.innerHTML = content;
+      newOption.setAttribute("value",value);
+      parent.append(newOption);
+   }
 
+   fetch('/getMoney')
+   .then(response => response.json())
+   .then(data => {
+      for(let value of data) {
+         addOption(method, value.name, value.id);
+      }
+   });
+
+   fetch('/getCountry')
+   .then(response => response.json())
+   .then(data => {
+         // console.log(data)
+      
+         for(let value of data) {
+            addOption(country, value.name, value.id);
+         }
+      });
+
+      country.onchange = () => {
+         fetch('/getState', {
+            method: 'post',
+            headers: {
+               "content-type":"application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: `country_id=${country.value}`
+         })
+         .then(response => response.json())
+         .then(data => {
+            // console.log(data)
+               state.innerHTML = null;
+               city.innerHTML = null;
+               addOption(state, "States", 0);
+               addOption(city, "Cities", 0);
+               for(let value of data) {
+                  addOption(state, value.name, value.id);
+               }
+         });
+      }
+
+      state.onchange = () => {
+         fetch('/getCity', {
+            method: 'post',
+            headers: {
+               "content-type":"application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: `state_id=${state.value}`
+         })
+         .then(response => response.json())
+         .then(data => {
+            console.log(data)
+               city.innerHTML = null;
+               addOption(city, "Cities", 0);
+               for(let value of data) {
+                  addOption(city, value.name, value.id);
+               }
+         });
+      }
+
+</script>
 </body>
 </html>

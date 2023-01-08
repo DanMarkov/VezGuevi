@@ -998,30 +998,27 @@
 }
 
 .display-orders {
-  text-align: center;
-  padding-bottom: 0;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  width: 80vw;
+  max-width: 60rem;
+  margin: 12rem auto 0 auto;
 }
 
 .display-orders p {
-  display: inline-block;
-  padding: 1rem 2rem;
-  margin: 1rem 0.5rem;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  background: rgba(34, 34, 34, 0.862745098);
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
   font-size: 2rem;
-  text-align: center;
-  border: var(--border);
-  background-color: var(--white);
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
 }
 
 .display-orders p span {
   color: var(--red);
-}
-
-.display-orders .grand-total {
-  margin-top: 2rem;
-  font-size: 2.5rem;
-  color: var(--light-color);
 }
 
 .display-orders .grand-total span {
@@ -1031,34 +1028,47 @@
 .checkout-orders form {
   padding: 2rem;
   border: var(--border);
-  background-color: var(--white);
+  background: var(--white);
   box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
+  min-height: 50rem;
+  display: grid;
+  align-items: start;
 }
 
-.checkout-orders form h3 {
+.flex .left h3, .flex .right h3 {
   border-radius: 0.5rem;
   background-color: var(--black);
-  color: var(--white);
+  color: #2c3e50;
   padding: 1.5rem 1rem;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
   font-size: 2.5rem;
 }
 
 .checkout-orders form .flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: space-between;
+  padding: 1rem;
 }
 
-.checkout-orders form .flex .inputBox {
-  width: 49%;
+.checkout-orders form .flex .left .inputBox,
+.checkout-orders form .flex .right .inputBox {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-auto-columns: 73rem;
 }
 
-.checkout-orders form .flex .inputBox .box {
+.checkout-orders form .flex .left .inputBox input[type=text],
+.checkout-orders form .flex .right .inputBox input[type=text] {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  margin: 0.5rem 0;
+  outline: none;
+}
+
+.checkout-orders form .flex .left .inputBox .box,
+.checkout-orders form .flex .right .inputBox .box {
   width: 100%;
   border: var(--border);
   border-radius: 0.5rem;
@@ -1069,9 +1079,19 @@
   background-color: var(--light-bg);
 }
 
-.checkout-orders form .flex .inputBox span {
+.checkout-orders form .flex .left .inputBox span,
+.checkout-orders form .flex .right .inputBox span {
   font-size: 1.8rem;
   color: var(--light-color);
+}
+
+.checkout-orders form .flex .left .country {
+  display: grid;
+  margin-top: 0.5rem;
+}
+
+.checkout-orders form .flex .left .country select {
+  padding: 0.5rem 0.7rem;
 }
 
 .placed-orders .box-container {
@@ -1136,8 +1156,10 @@
     justify-content: center;
     text-align: center;
   }
-  .checkout-orders form .flex .inputBox {
+  .checkout-orders form .flex .left .inputBox,
+.checkout-orders form .flex .right .inputBox {
     width: 100%;
+    display: inline-block;
   }
   .quick-view .box {
     width: 30rem;
