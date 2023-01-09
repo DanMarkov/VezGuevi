@@ -15,16 +15,6 @@ if(isset($message)){
    }
 }
 
-// if(isset($message)){
-//    foreach($message as $message){
-//       echo '
-//       <div class="message">
-//          <span>'.$message.'</span>
-//          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-//       </div>
-//       ';
-//    }
-// }
 
 ?>
 
@@ -45,8 +35,6 @@ if(isset($message)){
          <a class="navbar-shop" href="../publicAdmin/admin_products.php">products</a>
          <a class="navbar-orders" href="../publicAdmin/admin_orders.php">orders</a>
          <a class="navbar-search" href="../publicAdmin/admin_users.php">users</a>
-         <!-- <a id="user-navbar">account</a> -->
-         <!-- <a href="../publicAdmin/admin_contacts.php">messages</a> -->
       </nav>
 
       <div class="icons">
@@ -59,8 +47,6 @@ if(isset($message)){
             <path d="M13.1628 13.2558C13.1628 16.241 14.3487 19.104 16.4595 21.2149C18.5704 23.3258 21.4334 24.5116 24.4186 24.5116C27.4038 24.5116 30.2668 23.3258 32.3777 21.2149C34.4885 19.104 35.6744 16.241 35.6744 13.2558C35.6744 10.2706 34.4885 7.40763 32.3777 5.29675C30.2668 3.18588 27.4038 2 24.4186 2C21.4334 2 18.5704 3.18588 16.4595 5.29675C14.3487 7.40763 13.1628 10.2706 13.1628 13.2558V13.2558Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             <path d="M6 46C6 41.1151 7.94053 36.4302 11.3947 32.9761C14.8488 29.5219 19.5337 27.5814 24.4186 27.5814C29.3035 27.5814 33.9884 29.5219 37.4425 32.9761C40.8967 36.4302 42.8372 41.1151 42.8372 46H6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
          </svg>
-         <!-- <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"></div> -->
       </div>
 
       <div class="profile">

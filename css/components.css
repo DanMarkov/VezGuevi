@@ -347,7 +347,6 @@ li {
   align-items: center;
   justify-content: center;
 }
-
 .form-container form {
   width: 50rem;
   background-color: var(--white);
@@ -356,7 +355,6 @@ li {
   text-align: center;
   padding: 4rem;
 }
-
 .form-container form h3 {
   font-size: 3rem;
   color: var(--black);
@@ -364,11 +362,9 @@ li {
   text-transform: uppercase;
   padding-top: 4.5rem;
 }
-
 .form-container form span {
   position: relative;
 }
-
 .form-container form span .box {
   width: 100%;
   margin-top: 4.5rem;
@@ -379,7 +375,6 @@ li {
   color: var(--black);
   background: transparent;
 }
-
 .form-container form span .input-label {
   position: absolute;
   top: 0;
@@ -391,38 +386,31 @@ li {
   font-size: 1.8rem;
   white-space: pre;
 }
+.form-container form p {
+  margin-top: 3rem;
+  font-size: 2.2rem;
+  color: var(--light-color);
+}
+.form-container form p a {
+  color: var(--green);
+}
+.form-container form p a:hover {
+  text-decoration: underline;
+}
 
 .form-container form span .box:focus + .input-label,
 .form-container form span .box:valid + .input-label {
   transform: translate(0.5rem, -6.5rem);
 }
 
-.form-container form p {
-  margin-top: 3rem;
-  font-size: 2.2rem;
-  color: var(--light-color);
-}
-
-.form-container form p a {
-  color: var(--green);
-}
-
-.form-container form p a:hover {
-  text-decoration: underline;
-}
-
 .header {
-  /* background: var(--white); */
   background: transparent;
   position: sticky;
   top: 0;
-  /* left:0; right:0; */
   width: 100%;
   margin-top: 65px;
   z-index: 1000;
-  /* box-shadow: var(--box-shadow); */
 }
-
 .header .flex {
   display: flex;
   align-items: center;
@@ -437,18 +425,15 @@ li {
   background: var(--white);
   border: var(--border);
 }
-
 .header .flex .logo {
   font-size: 2.5rem;
 }
-
 .header .flex .logo img {
   width: 10rem;
   background-color: var(--green);
   border-radius: 50%;
   padding: 3px;
 }
-
 .header .flex .navbar a {
   margin: 0 1rem;
   font-size: 2rem;
@@ -458,17 +443,14 @@ li {
   transition: 0.5s;
   user-select: none;
 }
-
 .header .flex .navbar a:hover {
   --t: 100%;
 }
-
 .header .flex .icons {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
 }
-
 .header .flex .icons > * {
   font-size: 3.5rem;
   color: var(--light-color);

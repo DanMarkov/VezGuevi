@@ -16,39 +16,12 @@ function clearValue($value) {
     return $value;
 }
 
-
-// if(isset($_POST['add_to_wishlist'])){
-
-//    $pid = clearValue($_POST['pid']);
-//    $p_name = clearValue($_POST['p_name']);
-//    $p_price = clearValue($_POST['p_price']);
-//    $p_image = clearValue($_POST['p_image']);
-
-//    $check_wishlist_numbers = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND user_id = ?");
-//    $check_wishlist_numbers->execute([$p_name, $user_id]);
-
-//    $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
-//    $check_cart_numbers->execute([$p_name, $user_id]);
-
-//    if($check_wishlist_numbers->rowCount() > 0){
-//       $message[] = 'already added to wishlist!';
-//    }elseif($check_cart_numbers->rowCount() > 0){
-//       $message[] = 'already added to cart!';
-//    }else{
-//       $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES(?,?,?,?,?)");
-//       $insert_wishlist->execute([$user_id, $pid, $p_name, $p_price, $p_image]);
-//       $message[] = 'added to wishlist!';
-//    }
-
-// }
-
 if(isset($_POST['add_to_cart'])){
 
    $pid = clearValue($_POST['pid']);
    $p_name = clearValue($_POST['p_name']);
    $p_price = clearValue($_POST['p_price']);
    $p_image = clearValue($_POST['p_image']);
-   // $p_qty = clearValue($_POST['p_qty']);
 
    $check_cart_numbers = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND user_id = ?");
    $check_cart_numbers->execute([$p_name, $user_id]);
@@ -56,19 +29,9 @@ if(isset($_POST['add_to_cart'])){
    if($check_cart_numbers->rowCount() > 0){
       $message[] = 'already added to cart!';
    }else{
-
-      $check_wishlist_numbers = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND user_id = ?");
-      $check_wishlist_numbers->execute([$p_name, $user_id]);
-
-      if($check_wishlist_numbers->rowCount() > 0){
-         $delete_wishlist = $conn->prepare("DELETE FROM `wishlist` WHERE name = ? AND user_id = ?");
-         $delete_wishlist->execute([$p_name, $user_id]);
-      }
-
+      
       $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, image) VALUES(?,?,?,?,?)");
       $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_image]);
-      // $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES(?,?,?,?,?,?)");
-      // $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_qty, $p_image]);
       $message[] = 'added to cart!';
    }
 
@@ -103,48 +66,6 @@ require_once "$path/private/head.php";
    </section>
 
 </div>
-
-<!-- <section class="home-category">
-
-   <h1 class="title">Category</h1>
-
-   <div class="box-container">
-
-      <div class="box">
-         <img src="../images/shibaquest_tee_200x.png" alt="siba_quest">
-         <h3>tops</h3>
-         <p>VaporTEK Top, Graphic Tees, Long Sleeve Graphic Tees, Graphic Sweatshirts,
-            Graphic Sweatshirts, Hawaiian Shirts, All Over Print Tees, All Over Print Hoodies,
-            All Over Print Sweatshirts, All Over Print Zip Up, Tank Tops, Bomber Jackets;
-         </p>
-         <a href="category?category=tops" class="btn">Смотреть</a>
-      </div>
-
-      <div class="box">
-         <img src="../images/cloakanddagger_200x.png" alt="">
-         <h3>Bottoms</h3>
-         <p>VaporTEK Shorts, Joggers, Shorts, Swim Trunks, Shoes</p>
-         <a href="category?category=bottoms" class="btn">Смотреть</a>
-      </div>
-
-      <div class="box">
-         <img src="../images/Yogasetmockuptopfront_200x.png" alt="">
-         <h3>Womens</h3>
-         <p>VaporTEK Collection, Crop Tops, High Legged One Piece Swimsuits</p>
-         <a href="category?category=womens" class="btn">Смотреть</a>
-      </div>
-
-      <div class="box">
-         <img src="../images/facemask_samurai_new_front_200x.png" alt="">
-         <h3>Accessories</h3>
-         <p>Bucket Hats, Face Masks, Hats, Phone Cases, Pins, Beach Towels, </p>
-         <a href="category?category=accessories" class="btn">Смотреть</a>
-      </div>
-
-   </div>
-
-</section> -->
-
  
 <section class="cont">
    <div class="slider">
@@ -157,21 +78,6 @@ require_once "$path/private/head.php";
       <div  id="btnNext" class="slider-btn">Next</div>
    </div>
 </section>  
-
-<!-- <section class="cont">
-   <div class="slider">
-      <div id="sliderLine">
-         <img src="../images/slider1.jpg" alt="">
-         <img src="../images/slider2.jpg" alt="">
-         <img src="../images/slider3.jpg" alt="">
-         <img src="../images/slider4.jpg" alt="">
-         <img src="../images/slider5.jpg" alt="">
-         <img src="../images/slider6.jpg" alt="">
-      </div>
-   </div>
-   <div id="btnPre">Пред.</div>
-   <div id="btnNext">След.</div>
-</section> -->
 
 <section class="products"> 
 
@@ -201,8 +107,6 @@ require_once "$path/private/head.php";
          <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
          <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
          <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
-         <!-- <input type="number" min="1" value="1" name="p_qty" class="qty"> -->
-         <!-- <span class="option-btn"><i class="fas fa-heart"></i><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span>  -->
          <span class="btn"><svg class="theme-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.84052 11.5652H43.4958C43.79 11.5652 44.0802 11.6329 44.3439 11.7633C44.6076 11.8936 44.8377 12.0831 45.0163 12.3168C45.1949 12.5506 45.3172 12.8223 45.3737 13.111C45.4301 13.3997 45.4193 13.6976 45.3419 13.9814L41.4144 28.379C41.0833 29.5936 40.362 30.6657 39.3615 31.4301C38.3611 32.1944 37.1371 32.6085 35.8781 32.6087H12.2711" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             <path d="M2 2H2.72313C3.60097 2.00005 4.45209 2.30195 5.13375 2.85508C5.8154 3.4082 6.28612 4.1789 6.46696 5.03791L12.8393 35.3099C13.0201 36.1689 13.4909 36.9396 14.1725 37.4927C14.8542 38.0459 15.7053 38.3478 16.5831 38.3478H38.3478" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -217,32 +121,6 @@ require_once "$path/private/head.php";
       echo '<p class="empty">no products added yet!</p>';
    }
    ?>
-
-   <!-- <?php
-      $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6");
-      $select_products->execute();
-      if($select_products->rowCount() > 0){
-         while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
-   ?>
-   <form action="" class="box" method="POST">
-      <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
-      <a href="view?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
-      <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-      <div class="name"><?= $fetch_products['name']; ?></div>
-      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-      <input type="hidden" name="p_name" value="<?= $fetch_products['name']; ?>">
-      <input type="hidden" name="p_price" value="<?= $fetch_products['price']; ?>">
-      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
-      <input type="number" min="1" value="1" name="p_qty" class="qty">
-      <span class="option-btn"><i class="fas fa-heart"></i><input type="submit" value="add to wishlist" class="submit" name="add_to_wishlist"></span> 
-      <span class="btn"><i class="fas fa-shopping-cart"></i><input type="submit" value="add to cart" class="submit" name="add_to_cart"></span>
-   </form>
-   <?php
-      }
-   }else{
-      echo '<p class="empty">no products added yet!</p>';
-   }
-   ?> -->
 
    </div>
 
@@ -276,64 +154,17 @@ require_once "$path/private/head.php";
    console.log(countIMG);
 
    btnNext.addEventListener("click", ()=> {
-      // if(selectIMG>6){
-      //    selectIMG = 0;
-      // } else {
-      //    selectIMG++;
-      // }
          selectIMG > countIMG - 2 ? selectIMG = 0 : selectIMG++;
       imgSlider.setAttribute("src", `../images/${arrIMG[selectIMG]}`);
    });
 
    btnPre.addEventListener("click", ()=> {
-      // if(selectIMG>6){
-      //    selectIMG = 0;
-      // } else {
-      //    selectIMG++;
-      // }
-
       selectIMG <= 0 ? selectIMG = countIMG - 1 : selectIMG--;
 
-      // if(selectIMG<=0) selectIMG = countIMG-1;
-      // else selectIMG--;
       imgSlider.setAttribute("src", `../images/${arrIMG[selectIMG]}`);
    });
 
  </script> 
-
- <!-- <script>
-   // onclick = () => {
-      let myElem = document.querySelector("img");
-      let IMGWithValue = window.getComputedStyle(myElem).width
-      // 1 способ 
-      // console.log(IMGWithValue.match(/\d+/)[0]);
-        
-      // 2 способ
-      // console.log(number(IMGWithValue.match(/[0-9]+/)));
-      
-      // 3 способ
-      // parseInt - поиск строки в строке!
-      console.log(parseInt(IMGWithValue));
-      IMGWithValue = parseInt(IMGWithValue);
-   // }
-
-   let position = 0;
-   let stepPosition = IMGWithValue;
-   let imgCount = sliderLine.childElement;
-   let minPosition = -stepPosition * (imgCount - 1);
-   console.log(imgCount);
-   btnNext.onclick = () => {
-      if(position <= minPosition) position = 0;
-      else position = position - stepPosition;
-      sliderLine.style.left = `${position}rem`
-   }
-   
-   btnPre.onclick = () => {
-      position = position + stepPosition;
-      sliderLine.style.left = `${position}rem`
-   }
-
- </script> -->
 
 <script src="../js/script.js"></script>
 

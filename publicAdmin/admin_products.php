@@ -61,8 +61,6 @@ if(isset($_GET['delete'])){
    unlink('../uploaded_img/'.$fetch_delete_image['image']);
    $delete_products = $conn->prepare("DELETE FROM `products` WHERE id = ?");
    $delete_products->execute([$delete_id]);
-   // $delete_wishlist = $conn->prepare("DELETE FROM `wishlist` WHERE pid = ?");
-   // $delete_wishlist->execute([$delete_id]);
    $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE pid = ?");
    $delete_cart->execute([$delete_id]);
    header('location:admin_products.php');
@@ -114,27 +112,6 @@ require_once "$path/private/head.php";
       <span class="btn"><input type="submit" class="submit" value="add product" name="add_product"></span>
    </form>
 
-   <!-- <form action="" method="POST" enctype="multipart/form-data">
-      <div class="flex">
-         <div class="inputBox">
-            <input type="text" name="name" class="box" required placeholder="enter product name">
-            <select name="category" class="box" required>
-               <option value="" selected disabled>select category</option>
-               <option value="tops">tops</option>
-               <option value="bottoms">bottoms</option>
-               <option value="womens">womens</option>
-               <option value="accessories">accessories</option>
-            </select>
-         </div>
-         <div class="inputBox">
-         <input type="number" min="0" name="price" class="box" required placeholder="enter product price">
-         <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png, image/gif">
-         </div>
-      </div>
-      <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
-      <span class="btn"><input type="submit" class="submit" value="add product" name="add_product"></span>
-   </form> -->
-
 </section>
 
 <section class="show-products">
@@ -167,18 +144,6 @@ require_once "$path/private/head.php";
       </div>
    </div>
    
-   <!-- <div class="box">
-      
-      <div class="price">$<?= $fetch_products['price']; ?>/-</div>
-      <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-      <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="cat"><?= $fetch_products['category']; ?></div>
-      <div class="details"><?= $fetch_products['details']; ?></div>
-      <div class="flex-btn">
-         <a href="admin_update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
-         <a href="admin_products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
-      </div>
-   </div> -->
    <?php
       }
    }else{

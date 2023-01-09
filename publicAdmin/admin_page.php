@@ -22,20 +22,6 @@ require_once "$path/private/head.php";
    <h1 class="title">dashboard</h1>
 
    <div class="box-container">
-<!-- 
-      <div class="box">
-      <?php
-         $total_pendings = 0;
-         $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_pendings->execute(['pending']);
-         while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
-            $total_pendings += $fetch_pendings['total_price'];
-         };
-      ?>
-      <h3>$<?= $total_pendings; ?></h3>
-      <p>total pendings</p>
-      <a href="admin_orders.php" class="btn">see orders</a>
-      </div> -->
 
       <div class="box">
       <?php
@@ -105,17 +91,6 @@ require_once "$path/private/head.php";
       <p>total accounts</p>
       <a href="admin_users.php" class="btn">see accounts</a>
       </div>
-
-      <!-- <div class="box">
-      <?php
-         $select_messages = $conn->prepare("SELECT * FROM `message`");
-         $select_messages->execute();
-         $number_of_messages = $select_messages->rowCount();
-      ?>
-      <h3><?= $number_of_messages; ?></h3>
-      <p>total messages</p>
-      <a href="admin_contacts.php" class="btn">see messages</a>
-      </div> -->
 
    </div>
 

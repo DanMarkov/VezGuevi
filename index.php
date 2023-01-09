@@ -1,11 +1,7 @@
 <?
 $path = $_SERVER['DOCUMENT_ROOT'];
 require "$path/system/config.php";
-//session_start();
 
-// echo "<pre>";
-// print_r($_SERVER);
-// echo "</pre>";
 if(@$_SERVER['REDIRECT_URL']=="" or @$_SERVER['REDIRECT_URL']=="/home"):
      require_once "$path/public/home.php";
 
@@ -14,10 +10,7 @@ elseif($_SERVER['REDIRECT_URL']=="/login"):
 
 elseif($_SERVER['REDIRECT_URL']=="/signup"):
      require_once "$path/public/signup.php";
-       
-// elseif($_SERVER['REDIRECT_URL']=="/about"):
-//      require_once "$path/public/about.php";
-       
+              
 elseif($_SERVER['REDIRECT_URL']=="/category"):
      require_once "$path/public/category.php";
        
@@ -29,10 +22,7 @@ elseif($_SERVER['REDIRECT_URL']=="/orders"):
        
 elseif($_SERVER['REDIRECT_URL']=="/shop"):
      require_once "$path/public/shop.php";
-       
-elseif($_SERVER['REDIRECT_URL']=="/wishlist"):
-     require_once "$path/public/wishlist.php";
-       
+        
 elseif($_SERVER['REDIRECT_URL']=="/search"):
      require_once "$path/public/search_page.php";
 
@@ -41,9 +31,6 @@ elseif($_SERVER['REDIRECT_URL']=="/cart"):
 
 elseif($_SERVER['REDIRECT_URL']=="/update"):
      require_once "$path/public/user_profile_update.php";
-
-// elseif($_SERVER['REDIRECT_URL']=="/contact"):
-//      require_once "$path/public/contact.php";
 
 elseif($_SERVER['REDIRECT_URL']=="/view"):
      require_once "$path/public/view_page.php";

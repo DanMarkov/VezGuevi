@@ -90,8 +90,6 @@ require_once "$path/private/head.php";
 
    <form action="" method="POST">
 
-      <!-- <h3>place your order</h3> -->
-
       <div class="flex">
          <div class="left">
             <h3>BILLING ADDRESS</h3>
@@ -115,7 +113,6 @@ require_once "$path/private/head.php";
                <select name="country" class="box" id="country" required>
                   <option value="0">Countries</option>
                </select>
-               <!-- <input type="text" name="country" placeholder="enter your country" class="box" required> -->
             </div>
 
             <div class="inputBox">
@@ -123,7 +120,6 @@ require_once "$path/private/head.php";
                <select name="state" class="box" id="state" required>
                   <option value="0">States</option>
                </select>
-               <!-- <input type="text" name="state" placeholder="enter your state" class="box" required> -->
             </div>
 
             <div class="inputBox">
@@ -131,7 +127,6 @@ require_once "$path/private/head.php";
                <select name="city" class="box" id="city" required>
                   <option value="0">Cities</option>
                </select>
-              <!-- <input type="text" name="city" placeholder="enter your city" class="box" required> -->
             </div>
 
             <div class="country">
@@ -159,10 +154,6 @@ require_once "$path/private/head.php";
 
             <span class="btn"><input type="submit" name="order" class="submit" <?= ($cart_grand_total > 1)?'':'disabled'; ?>" value="SUBMIT!"></span>
          </div>
-         <!-- <div class="inputBox">
-            <span>address line 02 :</span>
-            <input type="text" name="street" placeholder="e.g. street name" class="box" required>
-         </div> -->
       </div>
 
    </form>
@@ -197,9 +188,7 @@ require_once "$path/private/head.php";
 
    fetch('/getCountry')
    .then(response => response.json())
-   .then(data => {
-         // console.log(data)
-      
+   .then(data => {      
          for(let value of data) {
             addOption(country, value.name, value.id);
          }
@@ -215,7 +204,6 @@ require_once "$path/private/head.php";
          })
          .then(response => response.json())
          .then(data => {
-            // console.log(data)
                state.innerHTML = null;
                city.innerHTML = null;
                addOption(state, "States", 0);
