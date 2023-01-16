@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 09, 2023 at 08:44 AM
+-- Generation Time: Jan 16, 2023 at 08:23 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.9
 
@@ -44,9 +44,7 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
 (76, 63, 69, 'Rhinestone Knee High Boots', 175, 1, 'glittershoeJ2.png'),
 (77, 63, 35, 'Sea of Dreams Tee', 47, 1, 'Sega_-_Front_Mockup_TShirt_200x.png'),
-(100, 61, 43, 'Scanset Shorts', 45, 1, 'Scanset_-_Men_s_Short_Front_200x.png'),
-(101, 61, 35, 'Sea of Dreams Tee', 47, 1, 'Sega_-_Front_Mockup_TShirt_200x.png'),
-(102, 61, 39, 'Challenger Tank Top', 43, 1, 'NewChallengerTankFrontMockup_200x.png');
+(111, 61, 38, 'Mystery Zip Up Hoodie', 15, 1, 'mystery_zipup_front_200x.png');
 
 -- --------------------------------------------------------
 
@@ -114,21 +112,6 @@ INSERT INTO `Countries` (`id`, `name`) VALUES
 (2, 'USA'),
 (3, 'Canada'),
 (4, 'Japan');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message`
---
-
-CREATE TABLE `message` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `number` varchar(12) NOT NULL,
-  `message` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -314,21 +297,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `image`) VA
 (61, 'DAni', '2@4', '339c2226e871cd240f7a03a3e84ba5c6', 'user', 'Artur9.jpg'),
 (62, 'Kuka', '4@gc.com', '339c2226e871cd240f7a03a3e84ba5c6', 'admin', 'artur9.gif');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `wishlist`
---
-
-CREATE TABLE `wishlist` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `pid` int NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` int NOT NULL,
-  `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -349,12 +317,6 @@ ALTER TABLE `Cities`
 -- Indexes for table `Countries`
 --
 ALTER TABLE `Countries`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `message`
---
-ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -388,12 +350,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wishlist`
---
-ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -401,7 +357,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `Cities`
@@ -414,12 +370,6 @@ ALTER TABLE `Cities`
 --
 ALTER TABLE `Countries`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `Methods`
@@ -450,12 +400,6 @@ ALTER TABLE `States`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
---
--- AUTO_INCREMENT for table `wishlist`
---
-ALTER TABLE `wishlist`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
