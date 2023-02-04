@@ -14,12 +14,6 @@ document.querySelector('#menu-btn').onclick = () =>{
    body.classList.add("blur");
 }
 
-
-// document.querySelector('#user-navbar').onclick = () =>{
-//    profile.classList.toggle('active');
-//    navbar.classList.remove('active');
-// }
-
 document.querySelector('#user-btn').onclick = () =>{
    profile.classList.toggle('active');
    navbar.classList.remove('active');
