@@ -15,7 +15,10 @@ if(isset($message)){
       echo '
       <div class="message">
          <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         <svg class="theme-icon" onclick="this.parentElement.remove();" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M46 2L2 46" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M46 46L2 2" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+         </svg>
       </div>
       ';
    }
