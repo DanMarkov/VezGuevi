@@ -386,7 +386,7 @@
     transform: translate(1rem, -22.5rem);
   }
   .add-products form span .box:focus + .input-label,
-.add-products form span .box:valid + .input-label {
+  .add-products form span .box:valid + .input-label {
     transform: translate(0.5rem, -27.5rem);
   }
 }

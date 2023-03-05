@@ -31,7 +31,7 @@ if(isset($_POST['update_profile'])){
    $old_image = $_POST['old_image'];
 
    if(!empty($image)){
-      if($image_size > 2000000){
+      if($image_size > 3000000){
          $message[] = 'image size is too large!';
       }else{
          $update_image = $conn->prepare("UPDATE `users` SET image = ? WHERE id = ?");

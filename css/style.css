@@ -883,7 +883,7 @@
     text-align: center;
   }
   .checkout-orders form .flex .left .inputBox,
-.checkout-orders form .flex .right .inputBox {
+  .checkout-orders form .flex .right .inputBox {
     width: 100%;
     display: inline-block;
   }

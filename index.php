@@ -38,6 +38,15 @@ elseif($_SERVER['REDIRECT_URL']=="/view"):
 elseif($_SERVER['REDIRECT_URL']=="/admin"):
      require_once "$path/publicAdmin/admin_page.php";
 
+elseif($_SERVER['REDIRECT_URL']=="/admin_orders"):
+     require_once "$path/publicAdmin/admin_orders.php";
+
+elseif($_SERVER['REDIRECT_URL']=="/admin_products"):
+     require_once "$path/publicAdmin/admin_products.php";
+
+elseif($_SERVER['REDIRECT_URL']=="/admin_users"):
+     require_once "$path/publicAdmin/admin_users.php";
+
 elseif($_SERVER['REDIRECT_URL']=="/getMoney"):
      $queryMethod = $conn -> query("SELECT * FROM Methods");
      $arrMethods = $queryMethod -> fetchAll(PDO::FETCH_ASSOC);

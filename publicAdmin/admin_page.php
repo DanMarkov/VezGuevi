@@ -34,7 +34,7 @@ require_once "$path/private/head.php";
       ?>
       <h3>$<?= $total_completed; ?></h3>
       <p>completed orders</p>
-      <a href="admin_orders.php" class="btn">see orders</a>
+      <a href="admin_orders" class="btn">see orders</a>
       </div>
 
       <div class="box">
@@ -45,7 +45,7 @@ require_once "$path/private/head.php";
       ?>
       <h3><?= $number_of_orders; ?></h3>
       <p>orders placed</p>
-      <a href="admin_orders.php" class="btn">see orders</a>
+      <a href="admin_orders" class="btn">see orders</a>
       </div>
 
       <div class="box">
@@ -56,7 +56,7 @@ require_once "$path/private/head.php";
       ?>
       <h3><?= $number_of_products; ?></h3>
       <p>products added</p>
-      <a href="admin_products.php" class="btn">see products</a>
+      <a href="admin_products" class="btn">see products</a>
       </div>
 
       <div class="box">
@@ -67,7 +67,7 @@ require_once "$path/private/head.php";
       ?>
       <h3><?= $number_of_users; ?></h3>
       <p>total users</p>
-      <a href="admin_users.php" class="btn">see accounts</a>
+      <a href="admin_users" class="btn">see accounts</a>
       </div>
 
       <div class="box">
@@ -78,7 +78,7 @@ require_once "$path/private/head.php";
       ?>
       <h3><?= $number_of_admins; ?></h3>
       <p>total admins</p>
-      <a href="admin_users.php" class="btn">see accounts</a>
+      <a href="admin_users" class="btn">see accounts</a>
       </div>
 
       <div class="box">
@@ -89,7 +89,7 @@ require_once "$path/private/head.php";
       ?>
       <h3><?= $number_of_accounts; ?></h3>
       <p>total accounts</p>
-      <a href="admin_users.php" class="btn">see accounts</a>
+      <a href="admin_users" class="btn">see accounts</a>
       </div>
 
    </div>
