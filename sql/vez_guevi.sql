@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 16, 2023 at 08:23 AM
+-- Generation Time: Mar 05, 2023 at 11:11 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.9
 
@@ -44,7 +44,8 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
 (76, 63, 69, 'Rhinestone Knee High Boots', 175, 1, 'glittershoeJ2.png'),
 (77, 63, 35, 'Sea of Dreams Tee', 47, 1, 'Sega_-_Front_Mockup_TShirt_200x.png'),
-(111, 61, 38, 'Mystery Zip Up Hoodie', 15, 1, 'mystery_zipup_front_200x.png');
+(111, 61, 38, 'Mystery Zip Up Hoodie', 15, 1, 'mystery_zipup_front_200x.png'),
+(112, 61, 37, 'Welcome! Sweatshirt', 65, 1, 'American_Online_-_Sweatshirt_Front_Mockup_200x.png');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ CREATE TABLE `orders` (
   `id` int NOT NULL,
   `user_id` int NOT NULL,
   `name` varchar(100) NOT NULL,
-  `number` varchar(12) NOT NULL,
+  `number` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `method` varchar(50) NOT NULL,
   `address` varchar(500) NOT NULL,
@@ -162,7 +163,11 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
 (14, 61, 'Daniil Markov', '213124', '2@g.com', '5', 'Address: Marata St. 2 2 1 - 554023', ', Bosozoku Bomber Jacket ( 2 ), Mystery Zip Up Hoodie ( 4 ), Challenger Tank Top ( 1 )', 327, '08-Jan-2023', 'completed'),
-(15, 61, 'Daniil Markov', '123442', '2@g.com', '6', 'Address: Marata St. 4-4 22 12 4 - 556304', ', Sea of Dreams Tee ( 1 ), Challenger Tank Top ( 2 )', 133, '08-Jan-2023', 'completed');
+(15, 61, 'Daniil Markov', '123442', '2@g.com', '6', 'Address: Marata St. 4-4 22 12 4 - 556304', ', Sea of Dreams Tee ( 1 ), Challenger Tank Top ( 2 )', 133, '08-Jan-2023', 'completed'),
+(16, 64, 'da', '125', 'd@gff.cpm', '6', 'Address: 12wqe 27 14 4 - 123', ', Sea of Dreams Tee ( 1 )', 47, '28-Feb-2023', 'pending'),
+(17, 64, 'dasd', '12454444', 'asd@g.ocm', '3', 'Address: dagdfsg 16 8 3 - 3123123', ', Challenger Tank Top ( 1 )', 43, '28-Feb-2023', 'pending'),
+(18, 64, 'dasd', '11', 'd@f.com', '3', 'Address: asdasd 26 14 4 - 213189', ', Sea of Dreams Tee ( 1 )', 47, '28-Feb-2023', 'pending'),
+(19, 64, 'dasfasf', '3123124124124', 'd@f.com', '6', 'Address: fsdfs 6 3 1 - 21313', ', Challenger Tank Top ( 1 )', 43, '28-Feb-2023', 'pending');
 
 -- --------------------------------------------------------
 
@@ -184,7 +189,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `details`, `price`, `image`) VALUES
-(34, 'Static Jazz Hawaiian Shirt', 'tops', '\r\n\r\n    SUPER SOFT PREMIUM POLYESTER BLEND.\r\n    MADE BY HAND AND SHIPPED FROM OUR LOS ANGELES STORE.\r\n    SUBLIMATED ARTWORK NEVER FADES OR WASHES OUT. \r\n\r\n', 67, '2F_200x.png'),
+(34, 'Static Jazz Hawaiian Shirt', 'tops', 'SUPER SOFT PREMIUM POLYESTER BLEND.\r\n    MADE BY HAND AND SHIPPED FROM OUR LOS ANGELES STORE.\r\n    SUBLIMATED ARTWORK NEVER FADES OR WASHES OUT.', 67, '2F_200x.png'),
 (35, 'Sea of Dreams Tee', 'tops', 'Super soft premium polyester blend.\r\n    Made by hand and shipped from out Los Angeles store.\r\n    Unisex Fit.\r\n    Sublimated artwork never fades or washes out.', 47, 'Sega_-_Front_Mockup_TShirt_200x.png'),
 (37, 'Welcome! Sweatshirt', 'tops', '\r\n\r\n    Super soft premium polyester micro-fleece blend. \r\n    Made by hand and shipped from our Los Angeles store.\r\n    Unisex fit.\r\n    Sublimated artwork never fades or washes out. \r\n\r\n', 65, 'American_Online_-_Sweatshirt_Front_Mockup_200x.png'),
 (38, 'Mystery Zip Up Hoodie', 'tops', '\r\n\r\n    Super soft premium polyester micro-fleece blend. \r\n    Made by hand and shipped from our Los Angeles store.\r\n    Unisex fit.\r\n    Sublimated artwork never fades or washes out.\r\n    This is a Mystery Item and will be picked randomly from our inventory.\r\n    Ships immediately \r\n\r\n', 15, 'mystery_zipup_front_200x.png'),
@@ -295,7 +300,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `image`) VA
 (59, '213', '2@fg.com', '339c2226e871cd240f7a03a3e84ba5c6', 'user', 'astrov lvovich..jpg'),
 (60, 'Kiki', 'opb@lv.com', 'd47e671b8469246ed5b371c2def18fad', 'user', 'Artur8.jpg'),
 (61, 'DAni', '2@4', '339c2226e871cd240f7a03a3e84ba5c6', 'user', 'Artur9.jpg'),
-(62, 'Kuka', '4@gc.com', '339c2226e871cd240f7a03a3e84ba5c6', 'admin', 'artur9.gif');
+(62, 'Kuka', '4@gc.com', '339c2226e871cd240f7a03a3e84ba5c6', 'admin', 'artur9.gif'),
+(64, 'Dude', '3@g.com', '7396330c6ba8953e267957e1b1fdc7fe', 'admin', 'astrov lvovich.jfif'),
+(65, 'Daniil', 'Danii@f.co', '339c2226e871cd240f7a03a3e84ba5c6', 'user', 'artur9.gif');
 
 --
 -- Indexes for dumped tables
@@ -357,7 +364,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- AUTO_INCREMENT for table `Cities`
@@ -375,19 +382,19 @@ ALTER TABLE `Countries`
 -- AUTO_INCREMENT for table `Methods`
 --
 ALTER TABLE `Methods`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `States`
@@ -399,7 +406,7 @@ ALTER TABLE `States`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
