@@ -43,7 +43,7 @@ require_once "$path/private/head.php";
          <p> username: <span><?= $fetch_users['name']; ?></span></p>
          <p> email: <span><?= $fetch_users['email']; ?></span></p>
          <p> user type: <span style=" color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'orange'; }; ?>"><?= $fetch_users['user_type']; ?></span></p>
-         <a href="admin_users.php?delete=<?= $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete</a>
+         <a href="admin_users?delete=<?= $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete</a>
       </div>
       <?php
       }
